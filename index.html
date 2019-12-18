@@ -396,7 +396,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 $(function () {
     let coverSlider = $('.carousel');
     coverSlider.carousel({
-        duration: Number('120'),
+        duration: Number('12'),
         fullWidth: true,
         indicators: 'true' === 'true'
     });
@@ -407,7 +407,7 @@ $(function () {
     let autoCarousel = function() {
         carouselIntervalId = setInterval(function () {
             coverSlider.carousel('next');
-        }, 5000);
+        }, 500);
     };
     autoCarousel();
     
