@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhaoxiaoliang-clh.github.io/about/index.html</loc>
+    
+    <lastmod>2019-12-18T11:42:37.331Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhaoxiaoliang-clh.github.io/404.html</loc>
+    
+    <lastmod>2019-12-18T11:36:27.765Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhaoxiaoliang-clh.github.io/2019/12/18/2019-hui-geng-hao/</loc>
     
     <lastmod>2019-12-18T10:01:29.331Z</lastmod>
@@ -23,13 +37,6 @@
   </url>
   
   <url>
-    <loc>https://zhaoxiaoliang-clh.github.io/404.html</loc>
-    
-    <lastmod>2019-12-18T08:33:48.136Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zhaoxiaoliang-clh.github.io/tags/index.html</loc>
     
     <lastmod>2019-12-18T08:33:48.107Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://zhaoxiaoliang-clh.github.io/archives/index.html</loc>
     
     <lastmod>2019-12-18T08:33:47.919Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhaoxiaoliang-clh.github.io/about/index.html</loc>
-    
-    <lastmod>2019-12-18T08:33:47.867Z</lastmod>
     
   </url>
   
