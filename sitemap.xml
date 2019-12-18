@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhaoxiaoliang-clh.github.io/friends/index.html</loc>
+    
+    <lastmod>2019-12-18T12:31:47.979Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhaoxiaoliang-clh.github.io/about/index.html</loc>
     
     <lastmod>2019-12-18T11:42:37.331Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://zhaoxiaoliang-clh.github.io/tags/index.html</loc>
     
     <lastmod>2019-12-18T08:33:48.107Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhaoxiaoliang-clh.github.io/friends/index.html</loc>
-    
-    <lastmod>2019-12-18T08:33:47.930Z</lastmod>
     
   </url>
   
