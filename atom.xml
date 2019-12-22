@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaoxiaoliang-clh.github.io/"/>
-  <updated>2019-12-20T13:08:59.878Z</updated>
+  <updated>2019-12-22T13:06:18.183Z</updated>
   <id>https://zhaoxiaoliang-clh.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sublime Text 配置C++和Python环境</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2019/12/22/sublime-text-pei-zhi-c-he-python-huan-jing/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2019/12/22/sublime-text-pei-zhi-c-he-python-huan-jing/</id>
+    <published>2019-12-22T11:39:47.000Z</published>
+    <updated>2019-12-22T13:06:18.183Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;Sublime Text 配置C++和Python环境&lt;/font&gt;&lt;/center&gt;
+&amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot; size=&quot;4&quot;&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="Sublime Text" scheme="https://zhaoxiaoliang-clh.github.io/categories/Sublime-Text/"/>
+    
+    
+      <category term="Sublime Text" scheme="https://zhaoxiaoliang-clh.github.io/tags/Sublime-Text/"/>
+    
+  </entry>
   
   <entry>
     <title>Offer成长的起点</title>

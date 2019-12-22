@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Sublime Text 配置C++和Python环境</title>
+      <link href="/2019/12/22/sublime-text-pei-zhi-c-he-python-huan-jing/"/>
+      <url>/2019/12/22/sublime-text-pei-zhi-c-he-python-huan-jing/</url>
+      
+        <content type="html"><![CDATA[<center><font color="purple" size="6">Sublime Text 配置C++和Python环境</font></center>&#160; &#160; &#160; &#160;<font color="black" size="4"> Sublime Text 是一款用于代码、标记和散文的<font color="red" size="4">精致文本编辑器</font>。具有漂亮的用户界面和强大的功能，例如代码缩略图，Python的插件，代码段等。还可自定义键绑定，菜单和工具栏。Sublime Text 的主要功能包括：拼写检查，书签，完整的 Python API ， Goto 功能，即时项目切换，多选择，多窗口等等。Sublime Text 是一个跨平台的编辑器，同时支持Windows、Linux、Mac OS X等操作系统。</font><p><img src="sublime.png" alt></p><p>&#160; &#160; &#160; &#160;<font color="black" size="4"> 相比于其他编程软件VS Code, Pycharm等等，<font color="red" size="4">Sublime Text更简洁，速度更快。</font>接下来我们就详细介绍如何基于Sublime Text 配置C++和Python环境。先附上一张美图，供大家参考，嘿嘿。</font><br><img src="sublimetext.JPG" alt></p><center><font color="purple" size="5">一、基于Sublime Text 配置C++环境</font></center>&#160; &#160; &#160; &#160;1. 安装Sublime Text 3，安装过程自行百度，这里不做过多讲解。<p>&#160; &#160; &#160; &#160;2. 配置C++运行环境</p><p>&#160; &#160; &#160; &#160; &#160;(I). 首先要安装C++的编译器,<br>常见的有MSVC、GCC、Cygwin、MinGW等等，大家选择一个安装就好。(我安装的是MinGW。)</p><p>&#160; &#160; &#160; &#160; &#160;(II). 装完编译器之后在我的电脑右键，依次点击属性-高级系统设置-环境变量，在系统变量中找到Path，编辑它，新建一条，添加MinGW的bin文件夹路径，以我的为例如下图：<br><img src="system.JPG" alt></p><p>&#160; &#160; &#160; &#160; &#160;(III). 打开Sublime Text，依次点击Tools - Build System - new Build System，粘贴以下代码并保存，如图：</p><pre><code>{    &quot;encoding&quot;: &quot;utf-8&quot;,    &quot;working_dir&quot;: &quot;$file_path&quot;,    &quot;shell_cmd&quot;: &quot;g++ -Wall -std=c++11 \&quot;$file_name\&quot; -o \&quot;$file_base_name\&quot;&quot;,    &quot;file_regex&quot;: &quot;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&quot;,    &quot;selector&quot;: &quot;source.c++&quot;,    &quot;variants&quot;:     [        {           &quot;name&quot;: &quot;Run&quot;,            &quot;shell_cmd&quot;: &quot;g++ -Wall -std=c++11 \&quot;$file\&quot; -o \&quot;$file_base_name\&quot; &amp;&amp; start cmd /c \&quot;\&quot;${file_path}/${file_base_name}\&quot; &amp; pause\&quot;&quot;        }    ]}</code></pre><p><img src="c++.JPG" alt></p><p>&#160; &#160; &#160; &#160;(IV). 这时候配置就完成了。我们可以写一个test.cpp代码测试一下，然后Tools - Build System选择C++，然后按ctrl+b就可以运行了，如下图。<br><img src="helloc++.JPG" alt></p><center><font color="purple" size="5">二、基于Sublime Text 配置Python环境</font></center>&#160; &#160; &#160; &#160; 1. 配置Python的环境和C++大同小异，下面简要描述。<p>&#160; &#160; &#160; &#160; 2. 打开Sublime Text，依次点击Tools - Build System - new Build System，粘贴以下代码并保存，其中第一行为python解释器所在的目录，如图：</p><pre><code>{    &quot;cmd&quot;: [&quot;‪C:/Program Files/Python36/python.exe&quot;,&quot;-u&quot;,&quot;$file&quot;],    &quot;file_regex&quot;:&quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;,    &quot;selector&quot;:&quot;source.python&quot;,}</code></pre><p><img src="pythonsys.JPG" alt></p><p>&#160; &#160; &#160; &#160; 3. 这时候配置就完成了。我们可以写一个test.py代码测试一下，然后Tools - Build System选择python，然后按ctrl+b就可以运行了，如下图。<br><img src="hellopython.JPG" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Sublime Text </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Sublime Text </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Offer成长的起点</title>
       <link href="/2019/12/20/offer-cheng-chang-de-qi-dian/"/>
       <url>/2019/12/20/offer-cheng-chang-de-qi-dian/</url>
