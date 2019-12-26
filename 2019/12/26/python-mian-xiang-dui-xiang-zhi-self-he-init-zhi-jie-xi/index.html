@@ -4,13 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode第一题两数之和, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="Python面向对象之self和init之解析, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="LeetCode第一题两数之和
-&amp;#160; &amp;#160; &amp;#160; &amp;#160;给定一个整数数组nums和一个目标值target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。
-你可以假设每种输入只会对应一个答案。但">
+    <meta name="description" content="Python面向对象之self和__init__()之解析
+
+一、Python面向对象之self
+
+####1. self是什么
+&amp;#160; &amp;#160; &amp;#160; &amp;#160;Python的self其实就相当于C++的this指针。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode第一题两数之和 | Hexo</title>
+    <title>Python面向对象之self和init之解析 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -306,13 +309,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/34.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode第一题两数之和
+                        Python面向对象之self和init之解析
                     </div>
                 </div>
             </div>
@@ -422,11 +425,24 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">无标签</span>
+                        
+                        <a href="/tags/Python/" target="_blank">
+                            <span class="chip bg-color">Python</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Python/" class="post-category" target="_blank">
+                            Python
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -434,7 +450,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-24
+                    2019-12-26
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -448,14 +464,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    789
+                    620
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
                 
@@ -471,115 +487,44 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center><font color="purple" size="6">LeetCode第一题两数之和</font></center>
-&#160; &#160; &#160; &#160;<font color="black" size="4">给定一个整数数组nums和一个目标值target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。
-你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</font>
+                <center><font color="purple" size="6">Python面向对象之self和__init__()之解析</font></center>
 
-<pre><code>给定 nums = [2, 7, 11, 15], target = 9
-因为 nums[0] + nums[1] = 2 + 7 = 9
-所以返回 [0, 1]</code></pre><p>&#160; &#160; &#160; &#160;<font color="black" size="4">下面给出基于C++和Python两种解题思路</font></p>
-<center><font color="purple" size="6">C++解法</font></center>
+<center><font color="purple" size="6">一、Python面向对象之self</font></center>
 
-<h4 id="解法一：暴力法"><a href="#解法一：暴力法" class="headerlink" title="解法一：暴力法"></a>解法一：暴力法</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">分析：题目给定我们一个数组nums和一个目标值target，那我们可以用两个for循环遍历所有的结果，然后返回两数之和等于目标值的两个数的下标即可。如下解法，其中nums.size()是获取向量元素个数。</font><br><img src="001.JPG" alt></p>
-<h4 id="解法二：两遍哈希表"><a href="#解法二：两遍哈希表" class="headerlink" title="解法二：两遍哈希表"></a>解法二：两遍哈希表</h4><pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        map<int,int> a;//建立hash表存放数组元素
-        vector<int> b(2,-1);//存放结果
-        for(int i=0;i<nums.size();i++)
-            a.insert(map<int,int>::value_type(nums[i],i));
-        for(int i=0;i<nums.size();i++)
-        {
-            if(a.count(target-nums[i])>0&&(a[target-nums[i]]!=i))
-            //判断是否找到目标元素且目标元素不能是本身
-            {
-                b[0]=i;
-                b[1]=a[target-nums[i]];
-                break;
-            }
-        }
-        return b;
-    };
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>&#160; &#160; &#160; &#160;<font color="black" size="4">该方法用map实现，map是STL的一个关联容器，它提供一对一（其中第一个可以称为关键字，每个关键字只能在map中出现一次，第二个可能称为该关键字的值）的数据处理能力。（我们下一篇博文重点介绍C++map函数以及vector）。</font></p>
-<h4 id="解法三：一遍哈希表"><a href="#解法三：一遍哈希表" class="headerlink" title="解法三：一遍哈希表"></a>解法三：一遍哈希表</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">改进：在进行迭代并将元素插入到表中的同时，我们还会回过头来检查表中是否已经存在当前元素所对应的目标元素。如果它存在，那我们已经找到了对应解，并立即将其返回。</font></p>
-<pre class="line-numbers language-c++"><code class="language-c++">class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        map<int,int> a;//提供一对一的hash
-        vector<int> b(2,-1);//用来承载结果，初始化一个大小为2，值为-1的容器b
-        for(int i=0;i<nums.size();i++)
-        {
-            if(a.count(target-nums[i])>0)
-            {
-                b[0]=a[target-nums[i]];
-                b[1]=i;
-                break;
-            }
-            a[nums[i]]=i;//反过来放入map中，用来获取结果下标
-        }
-        return b;
-    };
-};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<center><font color="purple" size="6">Python解法</font></center>
+<p>####1. self是什么</p>
+<p>&#160; &#160; &#160; &#160;<font color="black" size="4">Python的self其实就相当于C++的this指针。如果把类比作是图纸，那么由类实例化后的对象才是真正可以住的房子。根据一张图纸可以设计出成千上万的房子，它们长得都差不多，但它们都有不同的主人。每个人都只能回自己的家里，陪伴自己的孩子。。。。。。所以self这里就相当于每个房子的门牌号，有了self，你就可以轻松找到自己的房子。 </font><br>&#160; &#160; &#160; &#160;<font color="red" size="4">Python的self参数就是用一个道理，由同一个类可以生成无数对象，当一个对象的方法被调用的时候，对象会将自身的引用作为第一个参数传给该方法，那么Python就知道需要操作哪个对象的方法了。如下面的例子： </font></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Ball</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">setName</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">def</span> <span class="token function">kick</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"我叫 %s, 嗷~谁踢我？！"</span> <span class="token operator">%</span>self<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
 
-<h4 id="解法一："><a href="#解法一：" class="headerlink" title="解法一："></a>解法一：</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">遍历列表同时查字典</font></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
-        dct <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-        <span class="token keyword">for</span> i<span class="token punctuation">,</span> n <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> target <span class="token operator">-</span> n <span class="token keyword">in</span> dct<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token punctuation">[</span>dct<span class="token punctuation">[</span>target <span class="token operator">-</span> n<span class="token punctuation">]</span><span class="token punctuation">,</span> i<span class="token punctuation">]</span>
-            dct<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="解法二："><a href="#解法二：" class="headerlink" title="解法二："></a>解法二：</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">解题关键主要是想找到 num2 = target - num1，是否也在 list 中，那么就需要运用以下两个方法：<br><em>num2 in nums，返回True说明有戏
-</em>nums.index(num2)，查找num2的索引<br></font></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
-        lens <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        j<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>lens<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">.</span>count<span class="token punctuation">(</span>target <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token punctuation">(</span>target <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true">#如果num2=num1,且nums中只出现了一次，说明找到是num1本身。</span>
-                    <span class="token keyword">continue</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    j <span class="token operator">=</span> nums<span class="token punctuation">.</span>index<span class="token punctuation">(</span>target <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#index(x,i+1)是从num1后的序列后找num2                </span>
-                    <span class="token keyword">break</span>
-        <span class="token keyword">if</span> j<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span>j<span class="token punctuation">]</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="解法三："><a href="#解法三：" class="headerlink" title="解法三："></a>解法三：</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">解题思路是在方法二的基础上，优化解法。想着，num2的查找并不需要每次从nums查找一遍，只需要从num1位置之前或之后查找即可。但为了方便 index 这里选择从num1 位置之前查找：</font></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
-        lens <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        j<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>lens<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            temp <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token punctuation">:</span>i<span class="token punctuation">]</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">in</span> temp<span class="token punctuation">:</span>
-                j <span class="token operator">=</span> temp<span class="token punctuation">.</span>index<span class="token punctuation">(</span>target <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                <span class="token keyword">break</span>
-        <span class="token keyword">if</span> j<span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token punctuation">[</span>j<span class="token punctuation">,</span>i<span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="解法四："><a href="#解法四：" class="headerlink" title="解法四："></a>解法四：</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">参考了大神们的解法，通过哈希来求解，这里通过字典来模拟哈希查询的过程。个人理解这种办法相较于方法一其实就是字典记录了num1和num2的值和位置，而省了再查找num2索引的步骤。</font></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
-        hashmap<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-        <span class="token keyword">for</span> ind<span class="token punctuation">,</span>num <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            hashmap<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> ind
-        <span class="token keyword">for</span> i<span class="token punctuation">,</span>num <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            j <span class="token operator">=</span> hashmap<span class="token punctuation">.</span>get<span class="token punctuation">(</span>target <span class="token operator">-</span> num<span class="token punctuation">)</span>
-            <span class="token keyword">if</span> j <span class="token keyword">is</span> <span class="token operator">not</span> None <span class="token operator">and</span> i<span class="token operator">!=</span>j<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span>j<span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="解法五："><a href="#解法五：" class="headerlink" title="解法五："></a>解法五：</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">类似方法二，不需要mun2 不需要在整个dict中去查找。可以在num1之前的dict中查找，因此就只需要一次循环可解决。</font></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    hashmap<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-    <span class="token keyword">for</span> i<span class="token punctuation">,</span>num <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> hashmap<span class="token punctuation">.</span>get<span class="token punctuation">(</span>target <span class="token operator">-</span> num<span class="token punctuation">)</span> <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token punctuation">[</span>i<span class="token punctuation">,</span>hashmap<span class="token punctuation">.</span>get<span class="token punctuation">(</span>target <span class="token operator">-</span> num<span class="token punctuation">)</span><span class="token punctuation">]</span>
-        hashmap<span class="token punctuation">[</span>num<span class="token punctuation">]</span> <span class="token operator">=</span> i <span class="token comment" spellcheck="true">#这句不能放在if语句之前，解决list中有重复值或target-num=num的情况</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+a <span class="token operator">=</span> Ball<span class="token punctuation">(</span><span class="token punctuation">)</span>
+a<span class="token punctuation">.</span>setName<span class="token punctuation">(</span><span class="token string">"飞火流星"</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> Ball<span class="token punctuation">(</span><span class="token punctuation">)</span>
+b<span class="token punctuation">.</span>setName<span class="token punctuation">(</span><span class="token string">"团队之星"</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> Ball<span class="token punctuation">(</span><span class="token punctuation">)</span>
+c<span class="token punctuation">.</span>setName<span class="token punctuation">(</span><span class="token string">"土豆"</span><span class="token punctuation">)</span>
+a<span class="token punctuation">.</span>kick<span class="token punctuation">(</span><span class="token punctuation">)</span>
+b<span class="token punctuation">.</span>kick<span class="token punctuation">(</span><span class="token punctuation">)</span>
+c<span class="token punctuation">.</span>kick<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>####2. self代表类的实例，而非类</p>
+<p>&#160; &#160; &#160; &#160;<font color="black" size="4">类的方法与普通的函数只有一个特别的区别——它们必须有一个额外的第一个参数名称, 按照惯例它的名称是self。</font></p>
+<center><font color="purple" size="6">二、Python面向对象之__init__()</font></center>
+
+<p>####<strong>init</strong>()方法是构造方法</p>
+<p>&#160; &#160; &#160; &#160;<font color="black" size="4">类有一个名为<strong>init</strong>() 的特殊方法（构造方法），该方法在类实例化时会自动调用。由于类起到模板的作用，因此，可以在创建实例的时候，把我们认为必须绑定的属性强制填写进去。这里就用到Python当中的一个内置方法<strong>init</strong>方法，例如在Student类时，把name、score等属性绑上去:</font></p>
+<pre class="line-numbers language-python"><code class="language-python">
+<span class="token keyword">class</span> <span class="token class-name">Student</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> score<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>score <span class="token operator">=</span> score
+
+
+student <span class="token operator">=</span> Student<span class="token punctuation">(</span><span class="token string">"Hugh"</span><span class="token punctuation">,</span> <span class="token number">99</span><span class="token punctuation">)</span>
+student<span class="token punctuation">.</span>name
+student<span class="token punctuation">.</span>score<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>&#160; &#160; &#160; &#160;<font color="red" size="4">这里需要注意：(1) <strong>init</strong>方法的第一参数永远是self，表示创建的类实例本身，因此，在<strong>init</strong>方法内部，就可以把各种属性绑定到self，因为self就指向创建的实例本身。(2)有了<strong>init</strong>方法，在创建实例的时候，就不能传入空的参数了，必须传入与<strong>init</strong>方法匹配的参数，但self不需要传，Python解释器会自己把实例变量传进去：</font></p>
 
             </div>
             <hr />
@@ -738,9 +683,9 @@ public:
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《LeetCode第一题两数之和》
+                    《Python面向对象之self和init之解析》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/24/leetcode-di-yi-ti-liang-shu-zhi-he/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/26/python-mian-xiang-dui-xiang-zhi-self-he-init-zhi-jie-xi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -781,7 +726,7 @@ public:
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2019/12/24/leetcode-di-yi-ti-liang-shu-zhi-he/',
+        id: '2019/12/26/python-mian-xiang-dui-xiang-zhi-self-he-init-zhi-jie-xi/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1064,9 +1009,10 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/12/26/python-mian-xiang-dui-xiang-zhi-self-he-init-zhi-jie-xi/">
                     <div class="card-image">
@@ -1089,9 +1035,9 @@ public:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1104,6 +1050,7 @@ public:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1122,44 +1069,31 @@ public:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/22/sublime-text-pei-zhi-c-he-python-huan-jing/">
+                <a href="/2019/12/24/leetcode-di-yi-ti-liang-shu-zhi-he/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="Sublime Text 配置C++和Python环境">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="LeetCode第一题两数之和">
                         
-                        <span class="card-title">Sublime Text 配置C++和Python环境</span>
+                        <span class="card-title">LeetCode第一题两数之和</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Sublime Text 一款用于代码、标记和散文的精致文本编辑器, 不管你是新手小白，还是编程老大哥，都推荐给你Sublime Text。今天，我们来基于Sublime Text 配置C++和Python环境，“工欲善其事，必先利其器”！
+                            LeetCode第一题两数之和
+&#160; &#160; &#160; &#160;给定一个整数数组nums和一个目标值target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。
+你可以假设每种输入只会对应一个答案。但
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-24
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Sublime-Text/" class="post-category" target="_blank">
-                                    Sublime Text
-                                </a>
-                            
-                            
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Sublime-Text/" target="_blank">
-                        <span class="chip bg-color">Sublime Text</span>
-                    </a>
-                    
                 </div>
                 
             </div>
