@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaoxiaoliang-clh.github.io/"/>
-  <updated>2020-01-02T13:16:14.827Z</updated>
+  <updated>2020-01-02T13:23:52.536Z</updated>
   <id>https://zhaoxiaoliang-clh.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Cpp中堆和栈的区别</title>
+    <title>C++中堆和栈的区别</title>
     <link href="https://zhaoxiaoliang-clh.github.io/2020/01/02/cpp-zhong-dui-he-zhan-de-qu-bie/"/>
     <id>https://zhaoxiaoliang-clh.github.io/2020/01/02/cpp-zhong-dui-he-zhan-de-qu-bie/</id>
     <published>2020-01-02T12:59:52.000Z</published>
-    <updated>2020-01-02T13:16:14.827Z</updated>
+    <updated>2020-01-02T13:23:52.536Z</updated>
     
     <summary type="html">
     
@@ -30,13 +30,17 @@
         
         
           &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;C++中关于堆和栈的区别&lt;/font&gt;&lt;/center&gt;
-##### 1. 在C++中，内存分成5个区，他们分别是堆、栈、自由存储区、全局/静态存储区和常量存储区。 
-##### 2.
+
+&lt;h6 id=&quot;1-在C-中，内存分成5个区，他们分别是堆、栈、自由存储区、全局-静态存储区和常量存储区。&quot;&gt;&lt;a
         
       
     
     </summary>
     
+      <category term="C++" scheme="https://zhaoxiaoliang-clh.github.io/categories/C/"/>
+    
+    
+      <category term="C++" scheme="https://zhaoxiaoliang-clh.github.io/tags/C/"/>
     
   </entry>
   
