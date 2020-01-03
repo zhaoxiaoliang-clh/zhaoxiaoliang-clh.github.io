@@ -4,14 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C++之map用法总结, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="C++中vector、array和数组的比较, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="C++中map用法总结
+    <meta name="description" content="C++中vector、array和数组的比较
 
-1. map简介&amp;#160; &amp;#160; &amp;#160; &amp;#160;map是C++STL（标准模板库）的一个关联容器，它提供一对一的hash。
-&amp;#160; &amp;#160; &amp;#160; &amp;#160;(1).第一个">
+一、相同点
+
+1. 三者均可以使用下表运算符对元素进行操作，即vector和array都针对下标运算符[]进行了重载
+
+2. 三者在内存的方面都使用连续内存，即在vector和array的底层">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>C++之map用法总结 | Hexo</title>
+    <title>C++中vector、array和数组的比较 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -307,13 +310,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/34.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/31.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        C++之map用法总结
+                        C++中vector、array和数组的比较
                     </div>
                 </div>
             </div>
@@ -448,7 +451,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-02
+                    2020-01-03
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -462,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    470
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    1 分
                 </div>
                 
                 
@@ -485,113 +488,32 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center><font color="purple" size="6">C++中map用法总结</font></center>
+                <center><font color="purple" size="6">C++中vector、array和数组的比较</font></center>
 
-<h4 id="1-map简介"><a href="#1-map简介" class="headerlink" title="1. map简介"></a>1. map简介</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">map是C++STL（标准模板库）的一个关联容器，它提供一对一的hash。</font></p>
-<p>&#160; &#160; &#160; &#160;<font color="black" size="4">(1).第一个可以称为关键字(key)，每个关键字只能在map中出现一次；</font></p>
-<p>&#160; &#160; &#160; &#160;<font color="black" size="4">(2).第二个可能称为该关键字的值(value)；</font></p>
-<p>&#160; &#160; &#160; &#160; <font color="black" size="4">map以模板(泛型)方式实现，可以存储任意类型的数据，包括使用者自定义的数据类型。Map主要用于资料一对一映射(one-to-one)的情況，map內部的实现自建一颗红黑树，这颗树具有对数据自动排序的功能。在map内部所有的数据都是有序的，后边我们会见识到有序的好处。比如一个班级中，每个学生的学号跟他的姓名就存在著一对一映射的关系。</font></p>
-<p><img src="1.png" alt></p>
-<h4 id="2-map的功能"><a href="#2-map的功能" class="headerlink" title="2. map的功能"></a>2. map的功能</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">自动建立key － value的对应。key 和 value可以是任意你需要的类型。</font></p>
-<h4 id="3-map的使用"><a href="#3-map的使用" class="headerlink" title="3. map的使用"></a>3. map的使用</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">使用map得包含map类所在的头文件： </font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;map></span>  </span><span class="token comment" spellcheck="true">//注意，STL头文件没有扩展名.h</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>&#160; &#160; &#160; &#160;<font color="black" size="4">map对象是模板类，需要关键字和存储对象两个模板参数,如下图所示，这样就定义了一个用int作为索引,并拥有相关联的指向string的指针.</font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">std<span class="token operator">:</span>map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> string<span class="token operator">></span> personnel<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>&#160; &#160; &#160; &#160;<font color="black" size="4">为了使用方便，可以对模板类进行一下类型定义：</font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">typedef</span> map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span>CString<span class="token operator">></span> UDT_MAP_INT_CSTRING<span class="token punctuation">;</span>
-UDT_MAP_INT_CSTRING enumMap<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h4 id="4-map的构造函数"><a href="#4-map的构造函数" class="headerlink" title="4. map的构造函数"></a>4. map的构造函数</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">map共提供了6个构造函数，这块涉及到内存分配器这些东西，略过不表，在下面我们将接触到一些map的构造方法，这里要说下的就是，我们通常用如下方法构造一个map： </font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> string<span class="token operator">></span> mapStudent<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="5-插入元素"><a href="#5-插入元素" class="headerlink" title="5. 插入元素"></a>5. 插入元素</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 定义一个map对象</span>
+<center><font color="purple" size="4">一、相同点</font></center>
 
-map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> string<span class="token operator">></span> mapStudent<span class="token punctuation">;</span>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token number">1</span><span class="token punctuation">.</span> 三者均可以使用下表运算符对元素进行操作，即vector和array都针对下标运算符<span class="token punctuation">[</span><span class="token punctuation">]</span>进行了重载
 
-<span class="token comment" spellcheck="true">// 第一种 用insert函數插入pair</span>
+<span class="token number">2</span><span class="token punctuation">.</span> 三者在内存的方面都使用连续内存，即在vector和array的底层存储结构均使用数组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<center><font color="purple" size="4">二、不同点</font></center>
 
-mapStudent<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> string<span class="token operator">></span><span class="token punctuation">(</span><span class="token number">000</span><span class="token punctuation">,</span> <span class="token string">"student_zero"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token number">1</span><span class="token punctuation">.</span> vector属于变长容器，即可以根据数据的插入删除重新构建容器容量；但array和数组属于定长容量。
 
-<span class="token comment" spellcheck="true">// 第二种 用insert函数插入value_type数据</span>
+<span class="token number">2</span><span class="token punctuation">.</span> vector和array提供了更好的数据访问机制，即可以使用front和back以及at访问方式，使得访问更加安全。而数组只能通过下标访问，在程序的设计过程中，更容易引发访问 错误。
 
-mapStudent<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> string<span class="token operator">></span><span class="token operator">::</span><span class="token function">value_type</span><span class="token punctuation">(</span><span class="token number">001</span><span class="token punctuation">,</span> <span class="token string">"student_one"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">3</span><span class="token punctuation">.</span> vector和array提供了更好的遍历机制，即有正向迭代器和反向迭代器两种
 
-<span class="token comment" spellcheck="true">// 第三种 用"array"方式插入</span>
+<span class="token number">4</span><span class="token punctuation">.</span> vector和array提供了size和判空的获取机制，而数组只能通过遍历或者通过额外的变量记录数组的size
 
-mapStudent<span class="token punctuation">[</span><span class="token number">123</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"student_first"</span><span class="token punctuation">;</span>
+<span class="token number">5</span><span class="token punctuation">.</span> vector和array提供了两个容器对象的内容交换，即swap的机制，而数组对于交换只能通过遍历的方式，逐个元素交换的方式使用
 
-mapStudent<span class="token punctuation">[</span><span class="token number">456</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"student_second"</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font color="black" size="4">以上三种用法，虽然都可以实现数据的插入，但是它们是有区别的，当然了第一种和第二种在效果上是完成一样的，用insert函数插入数据，在数据的插入上涉及到集合的唯一性这个概念，<font color="red" size="4">即当map中有这个关键字时，insert操作是不能在插入数据的，</font>但是用数组方式就不同了，它可以覆盖以前该关键字对 应的值，用程序说明如下：</font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">
-mapStudent<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> string<span class="token operator">></span><span class="token operator">::</span><span class="token function">value_type</span> <span class="token punctuation">(</span><span class="token number">001</span><span class="token punctuation">,</span> <span class="token string">"student_one"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">6</span><span class="token punctuation">.</span> array提供了初始化所有成员的方法fill
 
-mapStudent<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> string<span class="token operator">></span><span class="token operator">::</span><span class="token function">value_type</span> <span class="token punctuation">(</span><span class="token number">001</span><span class="token punctuation">,</span> <span class="token string">"student_two"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><font color="black" size="4">上面这两条语句执行后，map中001这个关键字对应的值是“student_one”，第二条语句并没有生效，那么这就涉及到我们怎么知道insert语句是否插入成功的问题了，可以用pair来获得是否插入成功，程序如下:   我们通过pair的第二个变量来知道是否插入成功，它的第一个变量返回的是一个map的迭代器，如果插入成功的话Insert_Pair.second应该是true的，否则为false。</font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 构造定义，返回一个pair对象</span>
-pair<span class="token operator">&lt;</span>iterator<span class="token punctuation">,</span><span class="token keyword">bool</span><span class="token operator">></span> <span class="token function">insert</span> <span class="token punctuation">(</span><span class="token keyword">const</span> value_type<span class="token operator">&amp;</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token number">7</span><span class="token punctuation">.</span> vector提供了可以动态插入和删除元素的机制，而array和数组则无法做到，或者说array和数组需要完成该功能则需要自己实现完成
 
-pair<span class="token operator">&lt;</span>map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> string<span class="token operator">></span><span class="token operator">::</span>iterator<span class="token punctuation">,</span> <span class="token keyword">bool</span><span class="token operator">></span> Insert_Pair<span class="token punctuation">;</span>
+<span class="token number">8</span><span class="token punctuation">.</span>由于vector的动态内存变化的机制，在插入和删除时，需要考虑迭代的是否失效的问题。
 
-Insert_Pair <span class="token operator">=</span> mapStudent<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> string<span class="token operator">></span><span class="token operator">::</span><span class="token function">value_type</span> <span class="token punctuation">(</span><span class="token number">001</span><span class="token punctuation">,</span> <span class="token string">"student_one"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>Insert_Pair<span class="token punctuation">.</span>second<span class="token punctuation">)</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">""</span>Error insert <span class="token keyword">new</span> element" <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="6-查找元素"><a href="#6-查找元素" class="headerlink" title="6. 查找元素"></a>6. 查找元素</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">当所查找的关键key出现时，它返回数据所在对象的位置，如果沒有，返回iter与end函数的值相同。 </font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// find 返回迭代器指向当前查找元素的位置否则返回map::end()位置</span>
-iter <span class="token operator">=</span> mapStudent<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span><span class="token punctuation">(</span>iter <span class="token operator">!=</span> mapStudent<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-       cout<span class="token operator">&lt;&lt;</span><span class="token string">"Find, the value is"</span><span class="token operator">&lt;&lt;</span>iter<span class="token operator">-</span><span class="token operator">></span>second<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-<span class="token keyword">else</span>
-   cout<span class="token operator">&lt;&lt;</span><span class="token string">"Do not Find"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="7-刪除与清空元素"><a href="#7-刪除与清空元素" class="headerlink" title="7. 刪除与清空元素"></a>7. 刪除与清空元素</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//迭代器刪除</span>
-iter <span class="token operator">=</span> mapStudent<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-mapStudent<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>iter<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//用关键字刪除</span>
-<span class="token keyword">int</span> n <span class="token operator">=</span> mapStudent<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//如果刪除了會返回1，否則返回0</span>
-<span class="token comment" spellcheck="true">//用迭代器范围刪除 : 把整个map清空</span>
-mapStudent<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>mapStudent<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> mapStudent<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//等同于mapStudent.clear()</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="8-map的大小"><a href="#8-map的大小" class="headerlink" title="8. map的大小"></a>8. map的大小</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">在往map里面插入了数据，我们怎么知道当前已经插入了多少数据呢，可以用size函数，用法如下：</font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> nSize <span class="token operator">=</span> mapStudent<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="9-map的基本操作函数："><a href="#9-map的基本操作函数：" class="headerlink" title="9. map的基本操作函数："></a>9. map的基本操作函数：</h4><pre class="line-numbers language-cpp"><code class="language-cpp">     C<span class="token operator">++</span> maps是一种关联式容器，包含“关键字<span class="token operator">/</span>值”对
-
-     <span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>         返回指向map头部的迭代器
-
-     <span class="token function">clear</span><span class="token punctuation">(</span>）        删除所有元素
-
-     <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span>         返回指定元素出现的次数
-
-     <span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span>         如果map为空则返回<span class="token boolean">true</span>
-
-     <span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>           返回指向map末尾的迭代器
-
-     <span class="token function">equal_range</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   返回特殊条目的迭代器对
-
-     <span class="token function">erase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>         删除一个元素
-
-     <span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span>          查找一个元素
-
-     <span class="token function">get_allocator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 返回map的配置器
-
-     <span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">)</span>        插入元素
-
-     <span class="token function">key_comp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>      返回比较元素key的函数
-
-     <span class="token function">lower_bound</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   返回键值<span class="token operator">>=</span>给定元素的第一个位置
-
-     <span class="token function">max_size</span><span class="token punctuation">(</span><span class="token punctuation">)</span>      返回可以容纳的最大元素个数
-
-     <span class="token function">rbegin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>        返回一个指向map尾部的逆向迭代器
-
-     <span class="token function">rend</span><span class="token punctuation">(</span><span class="token punctuation">)</span>          返回一个指向map头部的逆向迭代器
-
-     <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span>          返回map中元素的个数
-
-     <span class="token function">swap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>           交换两个map
-
-     <span class="token function">upper_bound</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    返回键值<span class="token operator">></span>给定元素的第一个位置
-
-     <span class="token function">value_comp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>     返回比较元素value的函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">9</span><span class="token punctuation">.</span> vector和array在声明变量后，在生命周期完成后，会自动地释放其所占用的内存。对于数组，如果是采用<span class="token keyword">new</span><span class="token punctuation">[</span><span class="token punctuation">]</span>申请的内存空间，必须在使用<span class="token keyword">delete</span><span class="token punctuation">[</span><span class="token punctuation">]</span>完毕后手动释放其内存。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -750,9 +672,9 @@ mapStudent<span class="token punctuation">.</span><span class="token function">e
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《C++之map用法总结》
+                    《C++中vector、array和数组的比较》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/02/cpp-zhi-map-yong-fa-zong-jie/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/03/c-zhong-vector-array-he-shu-zu-de-bi-jiao/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -793,7 +715,7 @@ mapStudent<span class="token punctuation">.</span><span class="token function">e
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2020/01/02/cpp-zhi-map-yong-fa-zong-jie/',
+        id: '2020/01/03/c-zhong-vector-array-he-shu-zu-de-bi-jiao/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1076,31 +998,36 @@ mapStudent<span class="token punctuation">.</span><span class="token function">e
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/01/02/cpp-zhi-vector-rong-qi-xiao-jie/">
+                <a href="/2020/01/03/c-zhong-vector-array-he-shu-zu-de-bi-jiao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="C++之vector容器小结">
+                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="C++中vector、array和数组的比较">
                         
-                        <span class="card-title">C++之vector容器小结</span>
+                        <span class="card-title">C++中vector、array和数组的比较</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++之vector容器小结
+                            C++中vector、array和数组的比较
 
-1. 什么是vector？&#160; &#160; &#160; &#160;向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）。跟任意其它类型容器一样，它能够存
+一、相同点
+
+1. 三者均可以使用下表运算符对元素进行操作，即vector和array都针对下标运算符[]进行了重载
+
+2. 三者在内存的方面都使用连续内存，即在vector和array的底层
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1113,6 +1040,7 @@ mapStudent<span class="token punctuation">.</span><span class="token function">e
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1131,21 +1059,21 @@ mapStudent<span class="token punctuation">.</span><span class="token function">e
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/02/cpp-zhong-dui-he-zhan-de-qu-bie/">
+                <a href="/2020/01/02/cpp-zhi-vector-rong-qi-xiao-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="C++中堆和栈的区别">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="C++之vector容器小结">
                         
-                        <span class="card-title">C++中堆和栈的区别</span>
+                        <span class="card-title">C++之vector容器小结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++中关于堆和栈的区别
+                            C++之vector容器小结
 
-1. 在C++中，内存分成5个区，他们分别是堆、栈、自由存储区、全局/静态存储区和常量存储区。 2. 栈，就是那些由编译器在需要的时候分配，在不需要的时候自动清除的变量的存储区。里面的变量通常是局部变量、函数参数
+1. 什么是vector？&#160; &#160; &#160; &#160;向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）。跟任意其它类型容器一样，它能够存
                         
                     </div>
                     <div class="publish-info">
