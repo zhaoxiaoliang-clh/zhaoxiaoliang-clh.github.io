@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zhaoxiaoliang-clh.github.io/2020/01/06/c-biao-zhun-ku-zhi-cctype/</loc>
+    
+    <lastmod>2020-01-06T03:05:39.456Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zhaoxiaoliang-clh.github.io/2019/12/27/cpp-zhi-zhi-zhen-xiao-jie/</loc>
+    
+    <lastmod>2020-01-06T03:05:39.405Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zhaoxiaoliang-clh.github.io/2020/01/03/c-zhong-vector-array-he-shu-zu-de-bi-jiao/</loc>
     
-    <lastmod>2020-01-03T02:24:22.827Z</lastmod>
+    <lastmod>2020-01-06T03:05:39.291Z</lastmod>
     
   </url>
   
@@ -19,13 +33,6 @@
     <loc>https://zhaoxiaoliang-clh.github.io/2020/01/02/cpp-zhi-map-yong-fa-zong-jie/</loc>
     
     <lastmod>2020-01-03T02:11:39.021Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zhaoxiaoliang-clh.github.io/2019/12/27/cpp-zhi-zhi-zhen-xiao-jie/</loc>
-    
-    <lastmod>2020-01-03T02:11:02.016Z</lastmod>
     
   </url>
   
