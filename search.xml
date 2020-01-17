@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>C++之递归</title>
+      <link href="/2020/01/17/c-zhi-di-gui/"/>
+      <url>/2020/01/17/c-zhi-di-gui/</url>
+      
+        <content type="html"><![CDATA[<center><font color="purple" size="6">C++之递归</font></center><h5 id="1-递归介绍"><a href="#1-递归介绍" class="headerlink" title="1. 递归介绍"></a>1. 递归介绍</h5><p>&#160; &#160; &#160; &#160;<font color="black" size="4">C++函数有一种有趣的特点————可以调用自己(然而，与C语言不同的是，C++不允许main()调用自己)，这种功能被称为递归。尽管递归在特定的编程(例如人工智能)中是一种重要的工具，在这里简单介绍一下 它是如何工作的。</font><br>&#160; &#160; &#160; &#160;<font color="red" size="4">如果递归函数调用自己，则被调用的函数也将调用自己，这将无限循环下去，除非代码中包含终止调用链的内容。通常的方法将递归调用放在if语句中。</font></p><h5 id="2-一个例子"><a href="#2-一个例子" class="headerlink" title="2. 一个例子"></a>2. 一个例子</h5><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span><span class="token keyword">void</span> <span class="token function">countdown</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token keyword">const</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token function">countdown</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">void</span> <span class="token function">countdown</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Counting down ... "</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    <span class="token keyword">if</span> <span class="token punctuation">(</span> n <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">)</span>        <span class="token function">countdown</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    cout <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span><span class="token string">": Kaboom!\n"</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="001.JPG" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++之直角坐标系和极坐标系的转化</title>
       <link href="/2020/01/17/c-zhi-zhi-jiao-zuo-biao-xi-he-ji-zuo-biao-xi-de-zhuan-hua/"/>
       <url>/2020/01/17/c-zhi-zhi-jiao-zuo-biao-xi-he-ji-zuo-biao-xi-de-zhuan-hua/</url>
