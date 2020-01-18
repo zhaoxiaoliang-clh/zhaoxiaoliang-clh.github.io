@@ -4,13 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C++按值传递结构, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="C++之内联函数, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="C++按值传递结构
+    <meta name="description" content="C++之内联函数
 
-1. 传递和返回结构&amp;#160; &amp;#160; &amp;#160; &amp;#160;C++使用结构编程时，最直接的方式是处理基本类型那样来处理结构：也就是说，将结构作为参数传递，并在需要时将结构用作返回值使用。然而，按值传递结构">
+1. 内联函数&amp;#160; &amp;#160; &amp;#160; &amp;#160;C++内联函数的编译代码与其他程序代码”内联”起来了。也就是说，编译器将使用相应的函数代码替换函数调用。对于内联代码，程序无需跳到另一个位置处执行代码，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>C++按值传递结构 | Hexo</title>
+    <title>C++之内联函数 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -306,13 +306,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/31.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        C++按值传递结构
+                        C++之内联函数
                     </div>
                 </div>
             </div>
@@ -447,7 +447,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-16
+                    2020-01-18
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -461,14 +461,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    445
+                    500
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -484,57 +484,34 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center><font color="purple" size="6">C++按值传递结构</font></center>
+                <center><font color="purple" size="6">C++之内联函数</font></center>
 
-<h5 id="1-传递和返回结构"><a href="#1-传递和返回结构" class="headerlink" title="1. 传递和返回结构"></a>1. 传递和返回结构</h5><p>&#160; &#160; &#160; &#160;<font color="black" size="4">C++使用结构编程时，最直接的方式是处理基本类型那样来处理结构：也就是说，将结构作为参数传递，并在需要时将结构用作返回值使用。然而，按值传递结构有一个缺点。如果结构非常大，则复制结构将增加内存要求，降低系统运行的速度。 但是，当结构比较小时，按值传递结构最合理。</font></p>
-<h5 id="2-一个例子"><a href="#2-一个例子" class="headerlink" title="2. 一个例子"></a>2. 一个例子</h5><p>&#160; &#160; &#160; &#160;<font color="black" size="4">第一个例子处理行程时间。有些地图指出，从Thunder Falls 到Bingo城需要3小时50分钟，而从Bingo城到Gotesquo需要1小时25分钟。对于这种时间，可以使用结构表示————一个成员表示小时值，另一个成员表示分钟值。将两个时间加起来需要一些技巧，因为可能需要将分钟值转换成小时。例如，前面列出的两个时间的总和为4小时75分钟，应将它转换为5小时15分钟。下面开发用于表示时间值的结构，然后再开发一个函数，它接受两个这样的结构为参数，并返回表示参数的和的结构</font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<h5 id="1-内联函数"><a href="#1-内联函数" class="headerlink" title="1. 内联函数"></a>1. 内联函数</h5><p>&#160; &#160; &#160; &#160;<font color="black" size="4">C++内联函数的编译代码与其他程序代码”内联”起来了。也就是说，编译器将使用相应的函数代码替换函数调用。对于内联代码，程序无需跳到另一个位置处执行代码，再跳回来。&#160; &#160; &#160; &#160;<font color="red" size="4">因此，内联函数的运行速度比常规函数稍快，但是代价是需要占用更多内存。</font><br>如果程序在10个不同的地方调用同一个内联函数，则该程序将包含该函数代码的10个副本。</font></p>
+<p>&#160; &#160; &#160; &#160;<font color="black" size="4">所以，应有选择地使用内联函数。如果执行函数代码的时间比处理函数调用机制的时间长，则节省的时间将只占整个过程的很小一部分。如果代码执行时间很短，则内联调用就可以节省非内联调用使用的大部分时间。另一方面，由于这个过程相当快，因此尽管节省了该过程的大部分时间，但节省的时间绝对值并不大，除非该函数经常被调用。</font></p>
+<p><img src="001.JPG" alt></p>
+<p>&#160; &#160; &#160; &#160;<font color="black" size="4">要使用这项特性，必须采取下述措施之一：</font></p>
+<p>&#160; &#160; &#160; &#160;<font color="black" size="4">(1) 在函数声明前加上关键字 inline;</font></p>
+<p>&#160; &#160; &#160; &#160;<font color="black" size="4">(2) 在函数定义前加上关键字inline。</font></p>
+<p>&#160; &#160; &#160; &#160;<font color="black" size="4">通常的做法是省略原型，将整个定义(即函数头和所有函数代码)放在本应提供原型的地方。注意：内联函数不能递归。</font></p>
+<h5 id="2-一个例子"><a href="#2-一个例子" class="headerlink" title="2. 一个例子"></a>2. 一个例子</h5><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 
-<span class="token keyword">struct</span> tralvel_time
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> hours<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> mins<span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">const</span> <span class="token keyword">int</span> Mins_per_hr <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
-
-tralvel_time <span class="token function">sum</span><span class="token punctuation">(</span>tralvel_time t1<span class="token punctuation">,</span> tralvel_time t2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">show_time</span><span class="token punctuation">(</span>tralvel_time t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">inline</span> <span class="token keyword">double</span> <span class="token function">square</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> x <span class="token operator">*</span> x<span class="token punctuation">;</span><span class="token punctuation">}</span>
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token keyword">const</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-    tralvel_time day1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">45</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    tralvel_time day2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">55</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> c <span class="token operator">=</span> <span class="token number">13.0</span><span class="token punctuation">;</span>
 
-    tralvel_time trip <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span>day1<span class="token punctuation">,</span> day2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Two-day total:"</span><span class="token punctuation">;</span>
-    <span class="token function">show_time</span><span class="token punctuation">(</span>trip<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    tralvel_time day3 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">32</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Three-day total:"</span><span class="token punctuation">;</span>
-    <span class="token function">show_time</span><span class="token punctuation">(</span><span class="token function">sum</span><span class="token punctuation">(</span>trip<span class="token punctuation">,</span> day3<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+    a <span class="token operator">=</span> <span class="token function">square</span><span class="token punctuation">(</span><span class="token number">5.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    b<span class="token operator">=</span> <span class="token function">square</span> <span class="token punctuation">(</span><span class="token number">4.5</span><span class="token operator">+</span><span class="token number">7.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"a = "</span> <span class="token operator">&lt;&lt;</span> a <span class="token operator">&lt;&lt;</span> <span class="token string">" , b = "</span> <span class="token operator">&lt;&lt;</span> b <span class="token operator">&lt;&lt;</span><span class="token string">"\n"</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c = "</span> <span class="token operator">&lt;&lt;</span> c<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">", c square = "</span> <span class="token operator">&lt;&lt;</span> <span class="token function">square</span><span class="token punctuation">(</span>c<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Now c = "</span> <span class="token operator">&lt;&lt;</span> c <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-tralvel_time <span class="token function">sum</span><span class="token punctuation">(</span>tralvel_time t1<span class="token punctuation">,</span> tralvel_time t2<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    tralvel_time total<span class="token punctuation">;</span>
-    total<span class="token punctuation">.</span>mins <span class="token operator">=</span> <span class="token punctuation">(</span>t1<span class="token punctuation">.</span>mins <span class="token operator">+</span> t2<span class="token punctuation">.</span>mins<span class="token punctuation">)</span> <span class="token operator">%</span> Mins_per_hr<span class="token punctuation">;</span>
-    total<span class="token punctuation">.</span>hours <span class="token operator">=</span> t1<span class="token punctuation">.</span>hours <span class="token operator">+</span> t2<span class="token punctuation">.</span>hours <span class="token operator">+</span> <span class="token punctuation">(</span>t1<span class="token punctuation">.</span>mins<span class="token operator">+</span>t2<span class="token punctuation">.</span>mins<span class="token punctuation">)</span> <span class="token operator">/</span> Mins_per_hr<span class="token punctuation">;</span>
-
-    <span class="token keyword">return</span> total<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">void</span> <span class="token function">show_time</span><span class="token punctuation">(</span>tralvel_time t<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> t<span class="token punctuation">.</span>hours <span class="token operator">&lt;&lt;</span> <span class="token string">"hours, "</span>
-         <span class="token operator">&lt;&lt;</span> t<span class="token punctuation">.</span>mins <span class="token operator">&lt;&lt;</span> <span class="token string">"minutes\n"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="001.JPG" alt></p>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="002.JPG" alt></p>
 
             </div>
             <hr />
@@ -693,9 +670,9 @@ tralvel_time <span class="token function">sum</span><span class="token punctuati
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《C++按值传递结构》
+                    《C++之内联函数》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/16/c-an-zhi-chuan-di-jie-gou/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/18/c-zhi-nei-lian-han-shu/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -736,7 +713,7 @@ tralvel_time <span class="token function">sum</span><span class="token punctuati
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2020/01/16/c-an-zhi-chuan-di-jie-gou/',
+        id: '2020/01/18/c-zhi-nei-lian-han-shu/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1019,31 +996,32 @@ tralvel_time <span class="token function">sum</span><span class="token punctuati
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/01/17/c-zhi-zhi-jiao-zuo-biao-xi-he-ji-zuo-biao-xi-de-zhuan-hua/">
+                <a href="/2020/01/18/c-zhi-nei-lian-han-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="C++之直角坐标系和极坐标系的转化">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="C++之内联函数">
                         
-                        <span class="card-title">C++之直角坐标系和极坐标系的转化</span>
+                        <span class="card-title">C++之内联函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++之直角坐标系和极坐标系的转化
+                            C++之内联函数
 
-1. 转化思路&#160; &#160; &#160; &#160;关键在于编写一个将直角坐标转换为极坐标的函数。该函数接受一个rect参数，并返回一个polar结构。这需要 使用数学库中的函数，因此程
+1. 内联函数&#160; &#160; &#160; &#160;C++内联函数的编译代码与其他程序代码”内联”起来了。也就是说，编译器将使用相应的函数代码替换函数调用。对于内联代码，程序无需跳到另一个位置处执行代码，
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1056,6 +1034,7 @@ tralvel_time <span class="token function">sum</span><span class="token punctuati
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1074,26 +1053,26 @@ tralvel_time <span class="token function">sum</span><span class="token punctuati
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/06/c-biao-zhun-ku-zhi-cctype/">
+                <a href="/2020/01/17/c-zhi-di-gui/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="C++标准库之cctype">
+                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="C++之递归">
                         
-                        <span class="card-title">C++标准库之cctype</span>
+                        <span class="card-title">C++之递归</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++标准库之cctype
+                            C++之递归
 
-1. 什么是cctype？&#160; &#160; &#160; &#160;C++从C语言继承了一个与字符相关的、非常方便的函数软件包，它可以简化诸如确定字符是否为大写字母、数字、标点符号等工作，这些函数的
+1. 递归介绍&#160; &#160; &#160; &#160;C++函数有一种有趣的特点————可以调用自己(然而，与C语言不同的是，C++不允许main()调用自己)，这种功能被称为递归。尽管递归在特定的编程(例如人
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-17
                             </span>
                         <span class="publish-author">
                             
