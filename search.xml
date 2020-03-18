@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Jupyter Notebook打开默认文件夹以外的文件</title>
+      <link href="/2020/03/18/jupyter-notebook-da-kai-mo-ren-wen-jian-jia-yi-wai-de-wen-jian/"/>
+      <url>/2020/03/18/jupyter-notebook-da-kai-mo-ren-wen-jian-jia-yi-wai-de-wen-jian/</url>
+      
+        <content type="html"><![CDATA[<center><font color="purple" size="6">Jupyter Notebook打开默认文件夹以外的文件</font></center><h5 id="1-Jupyter-Notebook默认打开目录"><a href="#1-Jupyter-Notebook默认打开目录" class="headerlink" title="1. Jupyter Notebook默认打开目录"></a>1. Jupyter Notebook默认打开目录</h5><p>&#160; &#160; &#160; &#160; Jupyter启动之后默认打开的是C盘目录，如下图所示：<br><img src="001.JPG" alt></p><p>&#160; &#160; &#160; &#160;想要打开其他盘符的文件是无法实现的，如D、E、F、I盘目录下的文件等。但是可以借鉴下面的解决办法而无需修改Jupyter Notebook的默认打开路径。</p><h5 id="2-解决思路"><a href="#2-解决思路" class="headerlink" title="2. 解决思路"></a>2. 解决思路</h5><p>&#160; &#160; &#160; &#160; 在CMD模式中打开需要打开的目录，然后打开Jupyter Notebook，具体操作如下所示：</p><p>&#160; &#160; &#160; &#160;(1) win + R 进入CMD模式</p><p>&#160; &#160; &#160; &#160;(2) 在cmd窗口中输入下面代码即可打开I盘下的指定文件夹<br><img src="002.JPG" alt></p><p>&#160; &#160; &#160; &#160;(3) 然后Jupyter Notebook就会自动启动，目录变为自己指定的目录。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Jupyter Notebook </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Jupyter Notebook </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++之内联函数</title>
       <link href="/2020/01/18/c-zhi-nei-lian-han-shu/"/>
       <url>/2020/01/18/c-zhi-nei-lian-han-shu/</url>
