@@ -4,14 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="剑指offer04, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="
+    <meta name="description" content="剑指offer04：二维数组元素查找
 
-时间过得很快，已经到了研二上学期期末了。虽然已经快一年没有课，但是每天的生活依旧是匆匆忙忙的，无时无刻不在为毕业发愁。现在，想做点自己喜欢的事情，提前为明年的秋招生计做准备吧。那就先从LeetCode开始！！！
-">
+题目描述&amp;#160; &amp;#160; &amp;#160; &amp;#160;在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>LeetCode | Hexo</title>
+    <title>剑指offer04 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -307,13 +306,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/31.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        LeetCode
+                        剑指offer04
                     </div>
                 </div>
             </div>
@@ -424,8 +423,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/刷题/" target="_blank">
-                            <span class="chip bg-color">刷题</span>
+                        <a href="/tags/剑指offer/" target="_blank">
+                            <span class="chip bg-color">剑指offer</span>
                         </a>
                         
                     </div>
@@ -436,8 +435,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/刷题/" class="post-category" target="_blank">
-                            刷题
+                        <a href="/categories/剑指offer/" class="post-category" target="_blank">
+                            剑指offer
                         </a>
                         
                     </div>
@@ -448,7 +447,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-18
+                    2020-04-11
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -462,14 +461,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    87
+                    566
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -485,9 +484,115 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=191252&auto=1&height=66"></iframe></div>
+                <center><font color="purple" size="6">剑指offer04：二维数组元素查找</font></center>
 
-<p>时间过得很快，已经到了研二上学期期末了。虽然已经快一年没有课，但是每天的生活依旧是匆匆忙忙的，无时无刻不在为毕业发愁。现在，想做点自己喜欢的事情，提前为明年的秋招生计做准备吧。那就先从LeetCode开始！！！</p>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>&#160; &#160; &#160; &#160;在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">示例<span class="token operator">:</span>
+现有矩阵 matrix 如下：
+<span class="token punctuation">[</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span>   <span class="token number">4</span><span class="token punctuation">,</span>  <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span>   <span class="token number">5</span><span class="token punctuation">,</span>  <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span>   <span class="token number">6</span><span class="token punctuation">,</span>  <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span>
+
+给定 target <span class="token operator">=</span> <span class="token number">5</span>，返回 <span class="token boolean">true</span>。
+给定 target <span class="token operator">=</span> <span class="token number">20</span>，返回 <span class="token boolean">false</span>。
+
+限制：
+<span class="token number">0</span> <span class="token operator">&lt;=</span> n <span class="token operator">&lt;=</span> <span class="token number">1000</span>
+<span class="token number">0</span> <span class="token operator">&lt;=</span> m <span class="token operator">&lt;=</span> <span class="token number">1000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法一：暴力法"><a href="#解法一：暴力法" class="headerlink" title="解法一：暴力法"></a>解法一：暴力法</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">findNumberIn2DArray</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> matrix<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">(</span>matrix<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>  
+        <span class="token comment" spellcheck="true">//matrix.size()就是”二维数组”的行数</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>  
+            <span class="token comment" spellcheck="true">//matrix[0].size()就是”二维数组”的列数</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The target is in the 2DArray!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+                    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The target is not in the 2DArray!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法二：找规律"><a href="#解法二：找规律" class="headerlink" title="解法二：找规律"></a>解法二：找规律</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">我们从左下角开始遍历，当该值小于target值时，向右搜索；大于target值时，向上搜索。如果找到target则返回True，否则返回 False。</font></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/******************************************************************
+我们从左下角开始遍历，当该值小于 target 值时，向右搜索；
+大于 target 值时，向上搜索。如果找到 target 则返回 True，否则返回 False。
+******************************************************************/</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">findNumberIn2DArray</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> matrix<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>matrix<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> m <span class="token operator">=</span> matrix<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> row <span class="token operator">=</span> m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> col <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>row<span class="token operator">>=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>col<span class="token operator">&lt;</span>n<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>row<span class="token punctuation">]</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span> <span class="token operator">&lt;</span> target<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                col<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>row<span class="token punctuation">]</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span> <span class="token operator">></span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                row<span class="token operator">--</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The target is in the 2DArray!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The target is not in the 2DArray!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> N <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> M <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">></span> <span class="token function">obj</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//定义二维动态数组5行5列;</span>
+
+
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入二维数组: "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">int</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token keyword">int</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            cin <span class="token operator">>></span> obj<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token keyword">int</span> target<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入target: "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> target<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//cout &lt;&lt; "The target is: " &lt;&lt; target &lt;&lt; endl;</span>
+    Solution2 answer<span class="token punctuation">;</span>
+    answer<span class="token punctuation">.</span><span class="token function">findNumberIn2DArray</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -646,9 +751,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《LeetCode》
+                    《剑指offer04》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/18/leetcode/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/11/jian-zhi-offer04/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -689,7 +794,7 @@
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2019/12/18/leetcode/',
+        id: '2020/04/11/jian-zhi-offer04/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -972,46 +1077,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/12/20/offer-cheng-chang-de-qi-dian/">
+                <a href="/2020/04/11/jian-zhi-offer04/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Offer成长的起点">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="剑指offer04">
                         
-                        <span class="card-title">Offer成长的起点</span>
+                        <span class="card-title">剑指offer04</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            “生活就是舞台，在每一处盛开。 你我为梦添色彩，无人可替代。。。。。。” 当写下这篇记录自己准备Offer的起点文章时，耳机里单曲循环着由央视著名主持人合唱的这首《生活就是舞台》。是啊，生活就是舞台，时刻充满期待。就比如当前的我，一无所知，对自己的未来没有准确清晰的定位，目前没有论文，没有专利，没有项目，有的只是一颗无所畏惧的心，一颗永不服输的心，还有那份执着吧！
+                            剑指offer04：二维数组元素查找
+
+题目描述&#160; &#160; &#160; &#160;在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/成长/" class="post-category" target="_blank">
-                                    成长
+                            <a href="/categories/剑指offer/" class="post-category" target="_blank">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/成长/" target="_blank">
-                        <span class="chip bg-color">成长</span>
+                    <a href="/tags/剑指offer/" target="_blank">
+                        <span class="chip bg-color">剑指offer</span>
                     </a>
                     
                 </div>
@@ -1025,31 +1134,34 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/18/2019-hui-geng-hao/">
+                <a href="/2020/03/18/jupyter-notebook-da-kai-mo-ren-wen-jian-jia-yi-wai-de-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="2019花开不败">
+                        <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="Jupyter Notebook打开默认文件夹以外的文件">
                         
-                        <span class="card-title">2019花开不败</span>
+                        <span class="card-title">Jupyter Notebook打开默认文件夹以外的文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            今天是2019年3月21号，距离小亮上次发文已经过去一年了，在这一年里，发生了很多事情，最重要的是小亮没有坚持写作，没有坚持分享，没有坚持敲代码，罪过罪过。这是2019年的第一篇博客，小亮在这里立一个flag,以后每周更新三篇博客，不能断！！！坚持九个月，看看这一年自己的收获！！！不逼自己一把，真的是不知道坚持的力量和魅力。This is for you! I promise!
+                            Jupyter Notebook打开默认文件夹以外的文件
+
+1. Jupyter Notebook默认打开目录&#160; &#160; &#160; &#160; Jupyter启动之后默认打开的是C盘目录，如下图所示：
+&#160; &
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/随笔/" class="post-category" target="_blank">
-                                    随笔
+                            <a href="/categories/Jupyter-Notebook/" class="post-category" target="_blank">
+                                    Jupyter Notebook
                                 </a>
                             
                             
@@ -1059,8 +1171,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/具体生活/" target="_blank">
-                        <span class="chip bg-color">具体生活</span>
+                    <a href="/tags/Jupyter-Notebook/" target="_blank">
+                        <span class="chip bg-color">Jupyter Notebook</span>
                     </a>
                     
                 </div>
