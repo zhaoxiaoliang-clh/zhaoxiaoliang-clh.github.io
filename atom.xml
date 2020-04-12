@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaoxiaoliang-clh.github.io/"/>
-  <updated>2020-04-11T03:14:36.760Z</updated>
+  <updated>2020-04-12T03:02:57.980Z</updated>
   <id>https://zhaoxiaoliang-clh.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode026</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/12/leetcode026/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2020/04/12/leetcode026/</id>
+    <published>2020-04-12T02:58:23.000Z</published>
+    <updated>2020-04-12T03:02:57.980Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;LeetCode026：删除排序数组中的重复项&lt;/font&gt;&lt;/center&gt;
+&amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>剑指offer03</title>
@@ -537,26 +564,6 @@
     
     
       <category term="具体生活" scheme="https://zhaoxiaoliang-clh.github.io/tags/%E5%85%B7%E4%BD%93%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>这里的人与这里的故事</title>
-    <link href="https://zhaoxiaoliang-clh.github.io/2018/09/09/zhe-li-de-ren-yu-zhe-li-de-gu-shi/"/>
-    <id>https://zhaoxiaoliang-clh.github.io/2018/09/09/zhe-li-de-ren-yu-zhe-li-de-gu-shi/</id>
-    <published>2018-09-09T14:11:16.000Z</published>
-    <updated>2019-12-20T14:49:46.534Z</updated>
-    
-    <summary type="html">
-    
-      今天是2018年9月9日，明天是9月10日教师节，昨天小亮的大学同学兼比赛队长再兼相声老郭（哈哈，我给他取的，因为他说话自带天津的相声幽默风味）和小亮商量着今天一起去看望大学老师，今天重新回到这个待了四年，至今不愿去回忆的地方，再次坚定自己当初的选择与坚守！！！
-    
-    </summary>
-    
-      <category term="朋友 人生导师" scheme="https://zhaoxiaoliang-clh.github.io/categories/%E6%9C%8B%E5%8F%8B-%E4%BA%BA%E7%94%9F%E5%AF%BC%E5%B8%88/"/>
-    
-    
-      <category term="人生路上的朋友" scheme="https://zhaoxiaoliang-clh.github.io/tags/%E4%BA%BA%E7%94%9F%E8%B7%AF%E4%B8%8A%E7%9A%84%E6%9C%8B%E5%8F%8B/"/>
     
   </entry>
   
