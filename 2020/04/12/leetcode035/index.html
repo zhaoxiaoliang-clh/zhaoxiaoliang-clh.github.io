@@ -4,14 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="2019花开不败, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="Leetcode035, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="
-
-时间过得很快，终于等到放寒假了，虽然这几个月没有课，天天和放假也没啥区别呢。细数一下，还有5个月就要毕业了吧，大一刚入学的场景却依然清楚地记得，转眼间就成了老学长了呢。闲来无事，随便写写，有感而发，无病呻吟而已。
-">
+    <meta name="description" content="LeetCode035：搜索插入位置
+&amp;#160; &amp;#160; &amp;#160; &amp;#160;
+给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。
+如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+你可以假设数组中无重复">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>2019花开不败 | Hexo</title>
+    <title>Leetcode035 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -307,13 +308,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        2019花开不败
+                        Leetcode035
                     </div>
                 </div>
             </div>
@@ -424,8 +425,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/具体生活/" target="_blank">
-                            <span class="chip bg-color">具体生活</span>
+                        <a href="/tags/LeetCode/" target="_blank">
+                            <span class="chip bg-color">LeetCode</span>
                         </a>
                         
                     </div>
@@ -436,8 +437,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/随笔/" class="post-category" target="_blank">
-                            随笔
+                        <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                            LeetCode
                         </a>
                         
                     </div>
@@ -448,7 +449,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-18
+                    2020-04-12
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -462,14 +463,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    94
+                    538
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -485,9 +486,104 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=407679465&auto=1&height=66"></iframe></div>
+                <center><font color="purple" size="6">LeetCode035：搜索插入位置</font></center>
+&#160; &#160; &#160; &#160;<font color="black" size="4">
+给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。
+如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+你可以假设数组中无重复元素。</font>
+```cpp
+示例 1:
 
-<p>时间过得很快，终于等到放寒假了，虽然这几个月没有课，天天和放假也没啥区别呢。细数一下，还有5个月就要毕业了吧，大一刚入学的场景却依然清楚地记得，转眼间就成了老学长了呢。闲来无事，随便写写，有感而发，无病呻吟而已。<br><img src="001.jpg" alt><br><img src="002.jpg" alt><br><img src="003.jpg" alt><br><img src="004.jpg" alt></p>
+<p>输入: [1,3,5,6], 5<br>输出: 2<br>示例 2:</p>
+<p>输入: [1,3,5,6], 2<br>输出: 1<br>示例 3:</p>
+<p>输入: [1,3,5,6], 7<br>输出: 4<br>示例 4:</p>
+<p>输入: [1,3,5,6], 0<br>输出: 0</p>
+<pre><code>
+#### 解法一：基于if和for循环的判断 (执行时间4ms, 内存消耗6.5MB)
+
+&amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot; size=&quot;4&quot;&gt;首先定义一个标记new_idx，然后使用基于for范围的遍历数组，
+如果数组中的元素n不等于val, 则将n赋值给下标new_idx对应的元素&lt;/font&gt;
+
+```cpp
+class Solution {
+public:
+    int searchInsert(vector&lt;int&gt;&amp; nums, int target) {
+        int j=0;
+        int len = nums.size();
+        if (nums[0] &gt;= target)
+            return 0;
+        else if (nums[len - 1]&lt;target)
+            return len;
+        for (int i = 0; i&lt;int(nums.size() - 1); i++)
+        {
+            if (nums[i] == target)
+            {
+                j = i;
+                return j;
+            }
+            else if (nums[i]&lt;target &amp;&amp; nums[i + 1]&gt;=target)
+            {
+                j = i + 1;
+                return j;
+            }
+        }
+        return j;
+    }
+};</code></pre><h4 id="解法二：判断数组中的每一个元素和target的大小-执行时间4ms-内存消耗6-7MB"><a href="#解法二：判断数组中的每一个元素和target的大小-执行时间4ms-内存消耗6-7MB" class="headerlink" title="解法二：判断数组中的每一个元素和target的大小 (执行时间4ms, 内存消耗6.7MB)"></a>解法二：判断数组中的每一个元素和target的大小 (执行时间4ms, 内存消耗6.7MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">searchInsert</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">int</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> i<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法三：改写Solution2的for循环，采用auto基于范围的for循环-执行时间4ms-内存消耗6-6MB"><a href="#解法三：改写Solution2的for循环，采用auto基于范围的for循环-执行时间4ms-内存消耗6-6MB" class="headerlink" title="解法三：改写Solution2的for循环，采用auto基于范围的for循环 (执行时间4ms, 内存消耗6.6MB)"></a>解法三：改写Solution2的for循环，采用auto基于范围的for循环 (执行时间4ms, 内存消耗6.6MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution3</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">searchInsert</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> n <span class="token operator">:</span> nums<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">>=</span> target<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> i<span class="token punctuation">;</span>
+            <span class="token operator">++</span>i<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> nums<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组的大小Size: "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> Size<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> Size<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> Currval<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组中的元素: "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> Size <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cin <span class="token operator">>></span> Currval<span class="token punctuation">;</span>
+        nums<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>Currval<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> target<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入目标值target: "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> target<span class="token punctuation">;</span>
+    Solution answer<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"返回的目标索引值为： "</span> <span class="token operator">&lt;&lt;</span> answer<span class="token punctuation">.</span><span class="token function">searchInsert</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>target<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -646,9 +742,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《2019花开不败》
+                    《Leetcode035》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/18/2019-hui-geng-hao/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/12/leetcode035/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -689,7 +785,7 @@
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2019/12/18/2019-hui-geng-hao/',
+        id: '2020/04/12/leetcode035/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -972,46 +1068,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/12/18/leetcode/">
+                <a href="/2020/04/12/leetcode035/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="LeetCode">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Leetcode035">
                         
-                        <span class="card-title">LeetCode</span>
+                        <span class="card-title">Leetcode035</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            时间过得很快，已经到了研二上学期期末了。虽然已经快一年没有课，但是每天的生活依旧是匆匆忙忙的，无时无刻不在为毕业发愁。现在，想做点自己喜欢的事情，提前为明年的秋招生计做准备吧。那就先从LeetCode开始！！！
+                            LeetCode035：搜索插入位置
+&#160; &#160; &#160; &#160;
+给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。
+如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+你可以假设数组中无重复
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/刷题/" class="post-category" target="_blank">
-                                    刷题
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/刷题/" target="_blank">
-                        <span class="chip bg-color">刷题</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -1025,31 +1127,34 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/09/zhe-li-de-ren-yu-zhe-li-de-gu-shi/">
+                <a href="/2020/04/12/leetcode027/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="这里的人与这里的故事">
+                        <img src="/medias/featureimages/33.jpg" class="responsive-img" alt="Leetcode027">
                         
-                        <span class="card-title">这里的人与这里的故事</span>
+                        <span class="card-title">Leetcode027</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            &#160; &#160; &#160; &#160;在记录自己今天的感受前，先来介绍一下我大学仅有的几个好朋友之一———&gt;老郭（也就是今天的主人公李同学）！我和老郭的认识源于电子设计比赛，认知于电子设计比赛，结交于电子设计比赛，虽然
+                            LeetCode027：移除元素
+&#160; &#160; &#160; &#160;
+给你一个数组 nums 和一个值 val，你需要 "原地" 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
+不要使用额外的数组空间，你必
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/朋友-人生导师/" class="post-category" target="_blank">
-                                    朋友 人生导师
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
                                 </a>
                             
                             
@@ -1059,8 +1164,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/人生路上的朋友/" target="_blank">
-                        <span class="chip bg-color">人生路上的朋友</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -1207,6 +1312,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
     <footer class="page-footer bg-color">
     <div class="container row center-align">
