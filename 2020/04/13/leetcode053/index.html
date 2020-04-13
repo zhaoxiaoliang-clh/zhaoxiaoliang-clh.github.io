@@ -4,14 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Jupyter Notebook打开默认文件夹以外的文件, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="Leetcode053, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="Jupyter Notebook打开默认文件夹以外的文件
+    <meta name="description" content="LeetCode053：最大子序和
+&amp;#160; &amp;#160; &amp;#160; &amp;#160;
+给定一个整数数组nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。。
+```cpp
+示例:
 
-1. Jupyter Notebook默认打开目录&amp;#160; &amp;#160; &amp;#160; &amp;#160; Jupyter启动之后默认打开的是C盘目录，如下图所示：
-&amp;#160; &amp;">
+输入: [-2,1,">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Jupyter Notebook打开默认文件夹以外的文件 | Hexo</title>
+    <title>Leetcode053 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -307,13 +310,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/34.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/38.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Jupyter Notebook打开默认文件夹以外的文件
+                        Leetcode053
                     </div>
                 </div>
             </div>
@@ -424,8 +427,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Jupyter-Notebook/" target="_blank">
-                            <span class="chip bg-color">Jupyter Notebook</span>
+                        <a href="/tags/LeetCode/" target="_blank">
+                            <span class="chip bg-color">LeetCode</span>
                         </a>
                         
                     </div>
@@ -436,8 +439,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Jupyter-Notebook/" class="post-category" target="_blank">
-                            Jupyter Notebook
+                        <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                            LeetCode
                         </a>
                         
                     </div>
@@ -448,7 +451,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-18
+                    2020-04-13
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -462,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    210
+                    608
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -485,14 +488,122 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center><font color="purple" size="6">Jupyter Notebook打开默认文件夹以外的文件</font></center>
+                <center><font color="purple" size="6">LeetCode053：最大子序和</font></center>
+&#160; &#160; &#160; &#160;<font color="black" size="4">
+给定一个整数数组nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。。</font>
+```cpp
+示例:
 
-<h5 id="1-Jupyter-Notebook默认打开目录"><a href="#1-Jupyter-Notebook默认打开目录" class="headerlink" title="1. Jupyter Notebook默认打开目录"></a>1. Jupyter Notebook默认打开目录</h5><p>&#160; &#160; &#160; &#160; Jupyter启动之后默认打开的是C盘目录，如下图所示：<br><img src="001.JPG" alt></p>
-<p>&#160; &#160; &#160; &#160;想要打开其他盘符的文件是无法实现的，如D、E、F、I盘目录下的文件等。但是可以借鉴下面的解决办法而无需修改Jupyter Notebook的默认打开路径。</p>
-<h5 id="2-解决思路"><a href="#2-解决思路" class="headerlink" title="2. 解决思路"></a>2. 解决思路</h5><p>&#160; &#160; &#160; &#160; 在CMD模式中打开需要打开的目录，然后打开Jupyter Notebook，具体操作如下所示：</p>
-<p>&#160; &#160; &#160; &#160;(1) win + R 进入CMD模式</p>
-<p>&#160; &#160; &#160; &#160;(2) 在cmd窗口中输入下面代码即可打开I盘下的指定文件夹<br><img src="002.JPG" alt></p>
-<p>&#160; &#160; &#160; &#160;(3) 然后Jupyter Notebook就会自动启动，目录变为自己指定的目录。</p>
+<p>输入: [-2,1,-3,4,-1,2,1,-5,4],<br>输出: 6<br>解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。</p>
+<p>进阶:如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。</p>
+<pre><code>
+#### 解法一：暴力法
+
+```cpp
+class Solution
+{
+public:
+    int maxSubArray(vector&lt;int&gt; &amp;nums)
+    {
+        //类似寻找最大最小值的题目，初始值一定要定义成理论上的最小最大值
+        /***********************************************************************************
+        INT_MAX和INT_MIN分别表示最大、最小整数，定义在头文件limits.h中。
+        因为int占4字节32位，根据二进制编码的规则，INT_MAX = 2^31-1，INT_MIN= -2^31.C/C++中，
+        所有超过该限值的数，都会出现溢出，出现warning，但是并不会出现error。
+        如果想表示的整数超过了该限值，可以使用长整型long long 占8字节64位。
+        **************************************************************************/
+        int max = INT_MIN;  
+        int numsSize = int(nums.size());
+        for (int i = 0; i &lt; numsSize; i++)
+        {
+            int sum = 0;
+            for (int j = i; j &lt; numsSize; j++)
+            {
+                sum += nums[j];
+                if (sum &gt; max)
+                {
+                    max = sum;
+                }
+            }
+        }
+
+        return max;
+    }
+};</code></pre><h4 id="解法二：贪心法"><a href="#解法二：贪心法" class="headerlink" title="解法二：贪心法"></a>解法二：贪心法</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution2</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">maxSubArray</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>nums<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//类似寻找最大最小值的题目，初始值一定要定义成理论上的最小最大值</span>
+        <span class="token keyword">int</span> result <span class="token operator">=</span> INT_MIN<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> numsSize <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> numsSize<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            sum <span class="token operator">+</span><span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            result <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//如果sum &lt; 0，重新开始找子序串</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法三：两个标记动态寻找"><a href="#解法三：两个标记动态寻找" class="headerlink" title="解法三：两个标记动态寻找"></a>解法三：两个标记动态寻找</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**************
+两个标记动态寻找
+该题要找到连续子数组的最大和，可用动态寻找
+即定义两个变量presum、maxsum
+一个动态选择的做加法
+一个记录最大值
+********************/</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution3</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">maxSubArray</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> presum <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> maxsum <span class="token operator">=</span> presum<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">int</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            presum <span class="token operator">=</span> presum <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> presum <span class="token operator">+</span><span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">:</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            maxsum <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>maxsum<span class="token punctuation">,</span> presum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> maxsum<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> nums<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组的大小 Size: "</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> Size<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> Size<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> Currval<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组的元素: "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> Size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cin <span class="token operator">>></span> Currval<span class="token punctuation">;</span>
+        nums<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>Currval<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    Solution3 answer<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"最大连续子数组的和为： "</span> <span class="token operator">&lt;&lt;</span> answer<span class="token punctuation">.</span><span class="token function">maxSubArray</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -651,9 +762,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Jupyter Notebook打开默认文件夹以外的文件》
+                    《Leetcode053》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/03/18/jupyter-notebook-da-kai-mo-ren-wen-jian-jia-yi-wai-de-wen-jian/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/13/leetcode053/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -694,7 +805,7 @@
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2020/03/18/jupyter-notebook-da-kai-mo-ren-wen-jian-jia-yi-wai-de-wen-jian/',
+        id: '2020/04/13/leetcode053/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -977,48 +1088,54 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/04/11/jian-zhi-offer04/">
+                <a href="/2020/04/13/leetcode053/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="剑指offer04">
+                        <img src="/medias/featureimages/38.jpg" class="responsive-img" alt="Leetcode053">
                         
-                        <span class="card-title">剑指offer04</span>
+                        <span class="card-title">Leetcode053</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            剑指offer04：二维数组元素查找
+                            LeetCode053：最大子序和
+&#160; &#160; &#160; &#160;
+给定一个整数数组nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。。
+```cpp
+示例:
 
-题目描述&#160; &#160; &#160; &#160;在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二
+输入: [-2,1,
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/剑指offer/" class="post-category" target="_blank">
-                                    剑指offer
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/剑指offer/" target="_blank">
-                        <span class="chip bg-color">剑指offer</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -1032,33 +1149,35 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/18/c-zhi-nei-lian-han-shu/">
+                <a href="/2020/04/12/leetcode035/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="C++之内联函数">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Leetcode035">
                         
-                        <span class="card-title">C++之内联函数</span>
+                        <span class="card-title">Leetcode035</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++之内联函数
-
-1. 内联函数&#160; &#160; &#160; &#160;C++内联函数的编译代码与其他程序代码”内联”起来了。也就是说，编译器将使用相应的函数代码替换函数调用。对于内联代码，程序无需跳到另一个位置处执行代码，
+                            LeetCode035：搜索插入位置
+&#160; &#160; &#160; &#160;
+给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。
+如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+你可以假设数组中无重复
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category" target="_blank">
-                                    C++
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
                                 </a>
                             
                             
@@ -1068,8 +1187,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
