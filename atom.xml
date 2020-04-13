@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaoxiaoliang-clh.github.io/"/>
-  <updated>2020-04-13T03:47:51.737Z</updated>
+  <updated>2020-04-13T04:16:20.567Z</updated>
   <id>https://zhaoxiaoliang-clh.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode066</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/13/leetcode066/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2020/04/13/leetcode066/</id>
+    <published>2020-04-13T04:13:12.000Z</published>
+    <updated>2020-04-13T04:16:20.567Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;LeetCode066：加一&lt;/font&gt;&lt;/center&gt;
+&amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>Leetcode053</title>
@@ -541,33 +568,6 @@
     
     
       <category term="Python" scheme="https://zhaoxiaoliang-clh.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode第一题两数之和</title>
-    <link href="https://zhaoxiaoliang-clh.github.io/2019/12/24/leetcode-di-yi-ti-liang-shu-zhi-he/"/>
-    <id>https://zhaoxiaoliang-clh.github.io/2019/12/24/leetcode-di-yi-ti-liang-shu-zhi-he/</id>
-    <published>2019-12-24T12:07:13.000Z</published>
-    <updated>2020-01-03T02:09:12.794Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;LeetCode第一题两数之和&lt;/font&gt;&lt;/center&gt;
-&amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/tags/LeetCode/"/>
     
   </entry>
   

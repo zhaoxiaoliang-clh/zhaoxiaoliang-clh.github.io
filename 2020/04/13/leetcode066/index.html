@@ -4,13 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C++之内联函数, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="Leetcode066, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="C++之内联函数
-
-1. 内联函数&amp;#160; &amp;#160; &amp;#160; &amp;#160;C++内联函数的编译代码与其他程序代码”内联”起来了。也就是说，编译器将使用相应的函数代码替换函数调用。对于内联代码，程序无需跳到另一个位置处执行代码，">
+    <meta name="description" content="LeetCode066：加一
+&amp;#160; &amp;#160; &amp;#160; &amp;#160;
+给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
+你可以假设除了整数 0 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>C++之内联函数 | Hexo</title>
+    <title>Leetcode066 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -306,13 +308,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/30.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        C++之内联函数
+                        Leetcode066
                     </div>
                 </div>
             </div>
@@ -423,8 +425,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/C/" target="_blank">
-                            <span class="chip bg-color">C++</span>
+                        <a href="/tags/LeetCode/" target="_blank">
+                            <span class="chip bg-color">LeetCode</span>
                         </a>
                         
                     </div>
@@ -435,8 +437,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/C/" class="post-category" target="_blank">
-                            C++
+                        <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                            LeetCode
                         </a>
                         
                     </div>
@@ -447,7 +449,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-18
+                    2020-04-13
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -461,7 +463,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    500
+                    581
                 </div>
                 
 
@@ -484,34 +486,119 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center><font color="purple" size="6">C++之内联函数</font></center>
+                <center><font color="purple" size="6">LeetCode066：加一</font></center>
+&#160; &#160; &#160; &#160;<font color="black" size="4">
+给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
+你可以假设除了整数 0 之外，这个整数不会以零开头。</font>
+```cpp
+示例 1:
 
-<h5 id="1-内联函数"><a href="#1-内联函数" class="headerlink" title="1. 内联函数"></a>1. 内联函数</h5><p>&#160; &#160; &#160; &#160;<font color="black" size="4">C++内联函数的编译代码与其他程序代码”内联”起来了。也就是说，编译器将使用相应的函数代码替换函数调用。对于内联代码，程序无需跳到另一个位置处执行代码，再跳回来。&#160; &#160; &#160; &#160;<font color="red" size="4">因此，内联函数的运行速度比常规函数稍快，但是代价是需要占用更多内存。</font><br>如果程序在10个不同的地方调用同一个内联函数，则该程序将包含该函数代码的10个副本。</font></p>
-<p>&#160; &#160; &#160; &#160;<font color="black" size="4">所以，应有选择地使用内联函数。如果执行函数代码的时间比处理函数调用机制的时间长，则节省的时间将只占整个过程的很小一部分。如果代码执行时间很短，则内联调用就可以节省非内联调用使用的大部分时间。另一方面，由于这个过程相当快，因此尽管节省了该过程的大部分时间，但节省的时间绝对值并不大，除非该函数经常被调用。</font></p>
-<p><img src="001.JPG" alt></p>
-<p>&#160; &#160; &#160; &#160;<font color="black" size="4">要使用这项特性，必须采取下述措施之一：</font></p>
-<p>&#160; &#160; &#160; &#160;<font color="black" size="4">(1) 在函数声明前加上关键字 inline;</font></p>
-<p>&#160; &#160; &#160; &#160;<font color="black" size="4">(2) 在函数定义前加上关键字inline。</font></p>
-<p>&#160; &#160; &#160; &#160;<font color="black" size="4">通常的做法是省略原型，将整个定义(即函数头和所有函数代码)放在本应提供原型的地方。注意：内联函数不能递归。</font></p>
-<h5 id="2-一个例子"><a href="#2-一个例子" class="headerlink" title="2. 一个例子"></a>2. 一个例子</h5><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<p>输入: [1,2,3]<br>输出: [1,2,4]<br>解释: 输入数组表示数字 123。<br>示例 2:</p>
+<p>输入: [4,3,2,1]<br>输出: [4,3,2,2]<br>解释: 输入数组表示数字 4321。</p>
+<pre><code>
+#### 解法一：分情况讨论(执行用时 4ms，内存消耗6.6MB)
 
-<span class="token keyword">inline</span> <span class="token keyword">double</span> <span class="token function">square</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> x <span class="token operator">*</span> x<span class="token punctuation">;</span><span class="token punctuation">}</span>
+```cpp
+class Solution {
+public:
+    vector&lt;int&gt; plusOne(vector&lt;int&gt;&amp; digits) {
+        int Size = digits.size();
+        digits[Size - 1] += 1; //先给末尾元素加1
+        if (Size == 1 &amp;&amp; digits[0] &lt;10) //讨论digits只有一个元素，且该元素小于9这种情况
+        {
+            return digits;
+        }
+        else if (Size == 1 &amp;&amp; digits[0] &gt;9)  //讨论digits = [9] 这种情况
+        {
+            int first = digits[0] / 10;
+            digits.push_back(first);
+            digits[0] %= 10;
+            swap(digits[0], digits[1]);
+            return digits;
+        }
+        //一般情况
+        for (int i = Size - 1; i&gt;0; --i)
+        {
+            if (digits[i]&gt;9)
+            {
+                digits[i] %= 10;
+                digits[i - 1] += 1;
+            }
+            //讨论原数组中第一个元素等于9时的情况
+            if ((i - 1) == 0 &amp;&amp; digits[0]&gt;9)
+            {
+                int second = digits[0] / 10;
+                digits.push_back(second);
+                digits[0] %= 10;
+                for (int j = 0; j &lt;= Size; j++)
+                    swap(digits[j], digits[Size]);
+            }
+        }
+        return digits;
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token keyword">const</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    }
+};</code></pre><h4 id="解法二：模拟十进制加法器-执行用时-0ms，内存消耗6-6MB"><a href="#解法二：模拟十进制加法器-执行用时-0ms，内存消耗6-6MB" class="headerlink" title="解法二：模拟十进制加法器 (执行用时 0ms，内存消耗6.6MB)"></a>解法二：模拟十进制加法器 (执行用时 0ms，内存消耗6.6MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/******************************************************
+模拟十进制加法器 (执行用时 0ms，内存消耗6.6MB)
+思路：从末位向前逐位模拟十进制加法器，首位进行单独判断
+***********************************************************/</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">plusOne</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> digits<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> size <span class="token operator">=</span> digits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token operator">--</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>digits<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token operator">++</span>digits<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> digits<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//全是9的时候的情况</span>
+                digits<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                digits<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+                digits<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> digits<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-    <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-    <span class="token keyword">double</span> a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
-    <span class="token keyword">double</span> c <span class="token operator">=</span> <span class="token number">13.0</span><span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> nums<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组的大小 Size："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> Size<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> Size<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> Currval<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组的元素："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> Size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        cin <span class="token operator">>></span> Currval<span class="token punctuation">;</span>
+        nums<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>Currval<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    a <span class="token operator">=</span> <span class="token function">square</span><span class="token punctuation">(</span><span class="token number">5.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    b<span class="token operator">=</span> <span class="token function">square</span> <span class="token punctuation">(</span><span class="token number">4.5</span><span class="token operator">+</span><span class="token number">7.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"a = "</span> <span class="token operator">&lt;&lt;</span> a <span class="token operator">&lt;&lt;</span> <span class="token string">" , b = "</span> <span class="token operator">&lt;&lt;</span> b <span class="token operator">&lt;&lt;</span><span class="token string">"\n"</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c = "</span> <span class="token operator">&lt;&lt;</span> c<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">", c square = "</span> <span class="token operator">&lt;&lt;</span> <span class="token function">square</span><span class="token punctuation">(</span>c<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Now c = "</span> <span class="token operator">&lt;&lt;</span> c <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+    Solution2 answer<span class="token punctuation">;</span>
+    answer<span class="token punctuation">.</span><span class="token function">plusOne</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//迭代器遍历输出加一后的数组</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>it <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> nums<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>it<span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token operator">*</span>it <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+
+    cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> n <span class="token operator">:</span> nums<span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+
+
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="002.JPG" alt></p>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -670,9 +757,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《C++之内联函数》
+                    《Leetcode066》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/18/c-zhi-nei-lian-han-shu/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/13/leetcode066/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -713,7 +800,7 @@
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2020/01/18/c-zhi-nei-lian-han-shu/',
+        id: '2020/04/13/leetcode066/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -996,49 +1083,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/03/18/jupyter-notebook-da-kai-mo-ren-wen-jian-jia-yi-wai-de-wen-jian/">
+                <a href="/2020/04/13/leetcode066/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/34.jpg" class="responsive-img" alt="Jupyter Notebook打开默认文件夹以外的文件">
+                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="Leetcode066">
                         
-                        <span class="card-title">Jupyter Notebook打开默认文件夹以外的文件</span>
+                        <span class="card-title">Leetcode066</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Jupyter Notebook打开默认文件夹以外的文件
-
-1. Jupyter Notebook默认打开目录&#160; &#160; &#160; &#160; Jupyter启动之后默认打开的是C盘目录，如下图所示：
-&#160; &
+                            LeetCode066：加一
+&#160; &#160; &#160; &#160;
+给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
+你可以假设除了整数 0 
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Jupyter-Notebook/" class="post-category" target="_blank">
-                                    Jupyter Notebook
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Jupyter-Notebook/" target="_blank">
-                        <span class="chip bg-color">Jupyter Notebook</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
@@ -1052,33 +1142,37 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/17/c-zhi-di-gui/">
+                <a href="/2020/04/13/leetcode053/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="C++之递归">
+                        <img src="/medias/featureimages/38.jpg" class="responsive-img" alt="Leetcode053">
                         
-                        <span class="card-title">C++之递归</span>
+                        <span class="card-title">Leetcode053</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++之递归
+                            LeetCode053：最大子序和
+&#160; &#160; &#160; &#160;
+给定一个整数数组nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。。
+```cpp
+示例:
 
-1. 递归介绍&#160; &#160; &#160; &#160;C++函数有一种有趣的特点————可以调用自己(然而，与C语言不同的是，C++不允许main()调用自己)，这种功能被称为递归。尽管递归在特定的编程(例如人
+输入: [-2,1,
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category" target="_blank">
-                                    C++
+                            <a href="/categories/LeetCode/" class="post-category" target="_blank">
+                                    LeetCode
                                 </a>
                             
                             
@@ -1088,8 +1182,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/LeetCode/" target="_blank">
+                        <span class="chip bg-color">LeetCode</span>
                     </a>
                     
                 </div>
