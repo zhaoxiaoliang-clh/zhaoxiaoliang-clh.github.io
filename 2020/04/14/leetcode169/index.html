@@ -4,14 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Leetcode027, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="Leetcode169, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="LeetCode027：移除元素
+    <meta name="description" content="LeetCode169：多数元素
 &amp;#160; &amp;#160; &amp;#160; &amp;#160;
-给你一个数组 nums 和一个值 val，你需要 &#34;原地&#34; 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
-不要使用额外的数组空间，你必">
+给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
+你可以假设数组是非空的，并且给定的数组总是">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Leetcode027 | Hexo</title>
+    <title>Leetcode169 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -307,13 +307,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/34.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/29.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Leetcode027
+                        Leetcode169
                     </div>
                 </div>
             </div>
@@ -448,7 +448,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-12
+                    2020-04-14
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -462,14 +462,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    721
+                    162
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
                 
@@ -485,97 +485,46 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center><font color="purple" size="6">LeetCode027：移除元素</font></center>
+                <center><font color="purple" size="6">LeetCode169：多数元素</font></center>
 &#160; &#160; &#160; &#160;<font color="black" size="4">
-给你一个数组 nums 和一个值 val，你需要 "原地" 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
-不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
-元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</font>
+给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
+你可以假设数组是非空的，并且给定的数组总是存在多数元素。</font>
 ```cpp
 示例 1:
-给定 nums = [3,2,2,3], val = 3,
-函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。
 
-<p>注意: 你不需要考虑数组中超出新长度后面的元素。</p>
+
 <pre><code>
-#### 解法一：基于for范围的单标记方法 (执行用时 4ms, 内存消耗6.3MB)
-
-&amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot; size=&quot;4&quot;&gt;首先定义一个标记new_idx，然后使用基于for范围的遍历数组，
-如果数组中的元素n不等于val, 则将n赋值给下标new_idx对应的元素&lt;/font&gt;
+#### 解法一：基于sort的方法
 
 ```cpp
 class Solution {
 public:
-    int removeElement(vector&lt;int&gt;&amp; nums, int val) {
-        int new_idx = 0;
-        for (auto n : nums) {
-            if (n != val) {
-                nums[new_idx] = n;
-                new_idx++;
+    int majorityElement(vector&lt;int&gt;&amp; nums) {
+        long long Size = int(nums.size());
+        long long flag = Size / 2;
+        long long n = 1;
+        long long i = 1;
+        sort(nums.begin(), nums.end());
+        if (Size == 1)
+            return nums[0];
+        for (; i&lt;Size; i++)
+        {
+            if (nums[i] == nums[i - 1])
+            {
+                ++n;
+                if (n&gt;flag)
+                    return nums[i];
+            }
+            if (nums[i]&gt;nums[i - 1])
+            {
+                n = 1;
             }
         }
-        return new_idx;
+
+        return nums[i];
     }
-};</code></pre><h4 id="解法二：基于for循环的单标记方法-执行用时-4ms-内存消耗6-2MB"><a href="#解法二：基于for循环的单标记方法-执行用时-4ms-内存消耗6-2MB" class="headerlink" title="解法二：基于for循环的单标记方法 (执行用时 4ms, 内存消耗6.2MB)"></a>解法二：基于for循环的单标记方法 (执行用时 4ms, 内存消耗6.2MB)</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">首先定义一个标记new_idx，然后使用基于for循环的遍历数组，<br>如果数组中的元素nums[i]不等于val, 则将nums[i]赋值给nums[new_idx]。</font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">removeElement</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> new_idx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">int</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                nums<span class="token punctuation">[</span>new_idx<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                new_idx<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> new_idx<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="解法三：基于for循环的方法-执行用时-0ms-内存消耗6-3MB"><a href="#解法三：基于for循环的方法-执行用时-0ms-内存消耗6-3MB" class="headerlink" title="解法三：基于for循环的方法 (执行用时 0ms, 内存消耗6.3MB)"></a>解法三：基于for循环的方法 (执行用时 0ms, 内存消耗6.3MB)</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">1.定位到第一次出现val的位置，赋值给i。<br>2.从j=i+1位置出发出一次遍历整个数组，当nums[j]!=val时将该位置数值移动到i位置，<br>   并做i++；当nums[j]==val时则跳过该位置的数。<br>3.此时i是位于新数组的后面一位，所以i就是新数组的长度，返回即可。</font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution3</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">removeElement</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// if(nums.size() &lt; 2)</span>
-        <span class="token keyword">unsigned</span> i<span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> val<span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 定位到第一个val的位置</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> val<span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
-            nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            i<span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> i<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> nums<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> Size<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组nums的大小： "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cin <span class="token operator">>></span> Size<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组nums中的元素： "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> Currval<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> Size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        cin <span class="token operator">>></span> Currval<span class="token punctuation">;</span>
-        nums<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>Currval<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入目标值： "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> val<span class="token punctuation">;</span>
-    cin <span class="token operator">>></span> val<span class="token punctuation">;</span>
-    Solution answer<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"剔除目标值后数组的大小为： "</span> <span class="token operator">&lt;&lt;</span> answer<span class="token punctuation">.</span><span class="token function">removeElement</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> val<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">/*for (auto n : nums)
-        cout &lt;&lt; n &lt;&lt; " ";*/</span>
-
-    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+};
+</code></pre>
             </div>
             <hr />
 
@@ -733,9 +682,9 @@ public:
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Leetcode027》
+                    《Leetcode169》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/12/leetcode027/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/14/leetcode169/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -776,7 +725,7 @@ public:
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2020/04/12/leetcode027/',
+        id: '2020/04/14/leetcode169/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1063,28 +1012,27 @@ public:
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/12/leetcode035/">
+                <a href="/2020/04/14/leetcode004/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Leetcode035">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Leetcode004">
                         
-                        <span class="card-title">Leetcode035</span>
+                        <span class="card-title">Leetcode004</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LeetCode035：搜索插入位置
+                            LeetCode004：寻找两个有序数组的中位数
 &#160; &#160; &#160; &#160;
-给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。
-如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
-你可以假设数组中无重复
+给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。
+请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-12
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-14
                         </span>
                         <span class="publish-author">
                             
@@ -1116,27 +1064,28 @@ public:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/12/leetcode088/">
+                <a href="/2020/04/13/leetcode066/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Leetcode088">
+                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="Leetcode066">
                         
-                        <span class="card-title">Leetcode088</span>
+                        <span class="card-title">Leetcode066</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LeetCode088：合并两个有序数组
+                            LeetCode066：加一
 &#160; &#160; &#160; &#160;
-给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 nums1 成为一个有序数组。
-```cpp
+给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
+你可以假设除了整数 0 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-13
                             </span>
                         <span class="publish-author">
                             

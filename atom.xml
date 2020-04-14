@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaoxiaoliang-clh.github.io/"/>
-  <updated>2020-04-13T04:16:20.567Z</updated>
+  <updated>2020-04-14T02:18:46.394Z</updated>
   <id>https://zhaoxiaoliang-clh.github.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode004</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/14/leetcode004/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2020/04/14/leetcode004/</id>
+    <published>2020-04-14T02:17:09.000Z</published>
+    <updated>2020-04-14T02:18:46.394Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;LeetCode004：寻找两个有序数组的中位数&lt;/font&gt;&lt;/center&gt;
+&amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode169</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/14/leetcode169/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2020/04/14/leetcode169/</id>
+    <published>2020-04-14T01:59:50.000Z</published>
+    <updated>2020-04-14T02:01:34.502Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;LeetCode169：多数元素&lt;/font&gt;&lt;/center&gt;
+&amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot; size=&quot;4&quot;&gt;
+给定一个大小为 n
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>Leetcode066</title>
@@ -512,62 +567,6 @@
     
     
       <category term="C++" scheme="https://zhaoxiaoliang-clh.github.io/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++之指针小结</title>
-    <link href="https://zhaoxiaoliang-clh.github.io/2019/12/27/cpp-zhi-zhi-zhen-xiao-jie/"/>
-    <id>https://zhaoxiaoliang-clh.github.io/2019/12/27/cpp-zhi-zhi-zhen-xiao-jie/</id>
-    <published>2019-12-27T02:10:03.000Z</published>
-    <updated>2020-01-06T03:05:39.405Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;C++之指针小结&lt;/font&gt;&lt;/center&gt;
-
-&lt;h4 id=&quot;1-什么是vector？&quot;&gt;&lt;a href=&quot;#1-什么是vector？&quot; class=&quot;headerlink&quot; title=&quot;1.
-        
-      
-    
-    </summary>
-    
-      <category term="C++" scheme="https://zhaoxiaoliang-clh.github.io/categories/C/"/>
-    
-    
-      <category term="C++" scheme="https://zhaoxiaoliang-clh.github.io/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python面向对象之self和init之解析</title>
-    <link href="https://zhaoxiaoliang-clh.github.io/2019/12/26/python-mian-xiang-dui-xiang-zhi-self-he-init-zhi-jie-xi/"/>
-    <id>https://zhaoxiaoliang-clh.github.io/2019/12/26/python-mian-xiang-dui-xiang-zhi-self-he-init-zhi-jie-xi/</id>
-    <published>2019-12-26T09:47:22.000Z</published>
-    <updated>2020-04-11T03:06:40.851Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;Python面向对象之self和__init__()之解析&lt;/font&gt;&lt;/center&gt;
-
-&lt;center&gt;&lt;font color=&quot;purple&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://zhaoxiaoliang-clh.github.io/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="https://zhaoxiaoliang-clh.github.io/tags/Python/"/>
     
   </entry>
   

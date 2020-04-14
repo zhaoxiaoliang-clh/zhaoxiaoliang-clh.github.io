@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>Leetcode004</title>
+      <link href="/2020/04/14/leetcode004/"/>
+      <url>/2020/04/14/leetcode004/</url>
+      
+        <content type="html"><![CDATA[<center><font color="purple" size="6">LeetCode004：寻找两个有序数组的中位数</font></center>&#160; &#160; &#160; &#160;<font color="black" size="4">给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。你可以假设 nums1 和 nums2 不会同时为空。</font>```cpp示例 1:示例 1:nums1 = [1, 3]nums2 = [2]则中位数是 2.0<p>示例 2:<br>nums1 = [1, 2]<br>nums2 = [3, 4]<br>则中位数是 (2 + 3)/2 = 2.5</p><pre><code>#### 解法一：基于push_back和sort的方法 (执行用时：36ms，内存消耗7.9MB)```cppclass Solution {public:    double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {        int Size1 = int(nums1.size());        int Size2 = int(nums2.size());        int lensum = Size1 + Size2;        double answer=0;        for (int i = 0; i&lt;Size2; i++)        {            nums1.push_back(nums2[i]);        }        sort(nums1.begin(), nums1.end());        if (lensum % 2 == 1)        {            answer = nums1[lensum / 2];            return answer;        }        else if (lensum % 2 == 0)        {            lensum = lensum / 2;            answer = nums1[lensum];            lensum -= 1;            answer += nums1[lensum];            answer /= 2;            return  answer;        }        return answer;    }};</code></pre><h4 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span><span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> nums1<span class="token punctuation">,</span> nums2<span class="token punctuation">;</span>    <span class="token keyword">int</span> Size1<span class="token punctuation">,</span> Size2<span class="token punctuation">;</span>    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组nums1的大小： "</span><span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    cin <span class="token operator">>></span> Size1<span class="token punctuation">;</span>    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组nums1的元素： "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    <span class="token keyword">int</span> Currval<span class="token punctuation">;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> Size1<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        cin <span class="token operator">>></span> Currval<span class="token punctuation">;</span>        nums1<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>Currval<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组nums2的大小： "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    cin <span class="token operator">>></span> Size2<span class="token punctuation">;</span>    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组nums2的元素： "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    <span class="token keyword">int</span> Currval2<span class="token punctuation">;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> Size1<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        cin <span class="token operator">>></span> Currval2<span class="token punctuation">;</span>        nums1<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>Currval2<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    Solution a<span class="token punctuation">;</span>    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"数组nums1和nums2的中位数为： "</span> <span class="token operator">&lt;&lt;</span> a<span class="token punctuation">.</span><span class="token function">findMedianSortedArrays</span><span class="token punctuation">(</span>nums1<span class="token punctuation">,</span> nums2<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode169</title>
+      <link href="/2020/04/14/leetcode169/"/>
+      <url>/2020/04/14/leetcode169/</url>
+      
+        <content type="html"><![CDATA[<center><font color="purple" size="6">LeetCode169：多数元素</font></center>&#160; &#160; &#160; &#160;<font color="black" size="4">给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。你可以假设数组是非空的，并且给定的数组总是存在多数元素。</font>```cpp示例 1:<pre><code>#### 解法一：基于sort的方法```cppclass Solution {public:    int majorityElement(vector&lt;int&gt;&amp; nums) {        long long Size = int(nums.size());        long long flag = Size / 2;        long long n = 1;        long long i = 1;        sort(nums.begin(), nums.end());        if (Size == 1)            return nums[0];        for (; i&lt;Size; i++)        {            if (nums[i] == nums[i - 1])            {                ++n;                if (n&gt;flag)                    return nums[i];            }            if (nums[i]&gt;nums[i - 1])            {                n = 1;            }        }        return nums[i];    }};</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode066</title>
       <link href="/2020/04/13/leetcode066/"/>
       <url>/2020/04/13/leetcode066/</url>
