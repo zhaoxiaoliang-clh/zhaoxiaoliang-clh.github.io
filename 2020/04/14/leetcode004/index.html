@@ -307,7 +307,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -462,7 +462,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    373
+                    369
                 </div>
                 
 
@@ -490,51 +490,53 @@
 给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。
 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。
 你可以假设 nums1 和 nums2 不会同时为空。</font>
-```cpp
-示例 1:
-示例 1:
-nums1 = [1, 3]
-nums2 = [2]
-则中位数是 2.0
 
-<p>示例 2:<br>nums1 = [1, 2]<br>nums2 = [3, 4]<br>则中位数是 (2 + 3)/2 = 2.5</p>
-<pre><code>
-#### 解法一：基于push_back和sort的方法 (执行用时：36ms，内存消耗7.9MB)
-```cpp
-class Solution {
-public:
-    double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {
-        int Size1 = int(nums1.size());
-        int Size2 = int(nums2.size());
-        int lensum = Size1 + Size2;
-        double answer=0;
-        for (int i = 0; i&lt;Size2; i++)
-        {
-            nums1.push_back(nums2[i]);
-        }
-        sort(nums1.begin(), nums1.end());
+<pre class="line-numbers language-cpp"><code class="language-cpp">示例 <span class="token number">1</span><span class="token operator">:</span>
+示例 <span class="token number">1</span><span class="token operator">:</span>
+nums1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+nums2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+则中位数是 <span class="token number">2.0</span>
 
-        if (lensum % 2 == 1)
-        {
-            answer = nums1[lensum / 2];
-            return answer;
+示例 <span class="token number">2</span><span class="token operator">:</span>
+nums1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
+nums2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+则中位数是 <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span> <span class="token operator">=</span> <span class="token number">2.5</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法一：基于push-back和sort的方法-执行用时：36ms，内存消耗7-9MB"><a href="#解法一：基于push-back和sort的方法-执行用时：36ms，内存消耗7-9MB" class="headerlink" title="解法一：基于push_back和sort的方法 (执行用时：36ms，内存消耗7.9MB)"></a>解法一：基于push_back和sort的方法 (执行用时：36ms，内存消耗7.9MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">double</span> <span class="token function">findMedianSortedArrays</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums1<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> Size1 <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">(</span>nums1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> Size2 <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">(</span>nums2<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> lensum <span class="token operator">=</span> Size1 <span class="token operator">+</span> Size2<span class="token punctuation">;</span>
+        <span class="token keyword">double</span> answer<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>Size2<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            nums1<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>nums2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">sort</span><span class="token punctuation">(</span>nums1<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nums1<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        }
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>lensum <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            answer <span class="token operator">=</span> nums1<span class="token punctuation">[</span>lensum <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> answer<span class="token punctuation">;</span>
 
-        else if (lensum % 2 == 0)
-        {
-            lensum = lensum / 2;
-            answer = nums1[lensum];
-            lensum -= 1;
-            answer += nums1[lensum];
-            answer /= 2;
-            return  answer;
+        <span class="token punctuation">}</span>
 
-        }
-        return answer;
-    }
-};
-</code></pre><h4 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>lensum <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            lensum <span class="token operator">=</span> lensum <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            answer <span class="token operator">=</span> nums1<span class="token punctuation">[</span>lensum<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            lensum <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            answer <span class="token operator">+</span><span class="token operator">=</span> nums1<span class="token punctuation">[</span>lensum<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            answer <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span>  answer<span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> answer<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
@@ -1061,7 +1063,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Leetcode189">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Leetcode189">
                         
                         <span class="card-title">Leetcode189</span>
                     </div>
@@ -1072,10 +1074,11 @@ public:
                             LeetCode189：旋转数组
 &#160; &#160; &#160; &#160;
 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
-```cpp
+
 示例 1:
 
-输入: [1,2,3,4,5,6,7] 和 k =
+输入: [1,2,3,4,5,6,7] 和 k = 3
+输出:
                         
                     </div>
                     <div class="publish-info">
@@ -1116,7 +1119,7 @@ public:
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="Leetcode169">
+                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="Leetcode169">
                         
                         <span class="card-title">Leetcode169</span>
                     </div>
@@ -1312,7 +1315,7 @@ public:
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">19.3k</span>
+            <span class="white-color">20.1k</span>
             
 
             <br>
