@@ -4,15 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Leetcode066, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="Leetcode189, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="LeetCode066：加一
+    <meta name="description" content="LeetCode189：旋转数组
 &amp;#160; &amp;#160; &amp;#160; &amp;#160;
-给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
-最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
-你可以假设除了整数 0 ">
+给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
+```cpp
+示例 1:
+
+输入: [1,2,3,4,5,6,7] 和 k =">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Leetcode066 | Hexo</title>
+    <title>Leetcode189 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -308,13 +310,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/32.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Leetcode066
+                        Leetcode189
                     </div>
                 </div>
             </div>
@@ -449,7 +451,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-15
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -463,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    581
+                    695
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
                 
@@ -486,81 +488,90 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center><font color="purple" size="6">LeetCode066：加一</font></center>
+                <center><font color="purple" size="6">LeetCode189：旋转数组</font></center>
 &#160; &#160; &#160; &#160;<font color="black" size="4">
-给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
-最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
-你可以假设除了整数 0 之外，这个整数不会以零开头。</font>
+给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。</font>
 ```cpp
 示例 1:
 
-<p>输入: [1,2,3]<br>输出: [1,2,4]<br>解释: 输入数组表示数字 123。<br>示例 2:</p>
-<p>输入: [4,3,2,1]<br>输出: [4,3,2,2]<br>解释: 输入数组表示数字 4321。</p>
+<p>输入: [1,2,3,4,5,6,7] 和 k = 3<br>输出: [5,6,7,1,2,3,4]<br>解释:<br>向右旋转 1 步: [7,1,2,3,4,5,6]<br>向右旋转 2 步: [6,7,1,2,3,4,5]<br>向右旋转 3 步: [5,6,7,1,2,3,4]<br>示例 2:</p>
+<p>输入: [-1,-100,3,99] 和 k = 2<br>输出: [3,99,-1,-100]<br>解释:<br>向右旋转 1 步: [99,-1,-100,3]<br>向右旋转 2 步: [3,99,-1,-100]<br>说明:</p>
+<p>尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。<br>要求使用空间复杂度为 O(1) 的 原地 算法。</p>
 <pre><code>
-#### 解法一：分情况讨论(执行用时 4ms，内存消耗6.6MB)
-
+#### 解法一：基于旋转一次的for循环方法 (超出时间限制)
 ```cpp
+/*********************************
+基于旋转一次的for循环方法 (超出时间限制)
+思路：先完成旋转一次时的基本函数，
+然后再for循环K次。
+*****************************/
 class Solution {
 public:
-    vector&lt;int&gt; plusOne(vector&lt;int&gt;&amp; digits) {
-        int Size = digits.size();
-        digits[Size - 1] += 1; //先给末尾元素加1
-        if (Size == 1 &amp;&amp; digits[0] &lt;10) //讨论digits只有一个元素，且该元素小于9这种情况
-        {
-            return digits;
-        }
-        else if (Size == 1 &amp;&amp; digits[0] &gt;9)  //讨论digits = [9] 这种情况
-        {
-            int first = digits[0] / 10;
-            digits.push_back(first);
-            digits[0] %= 10;
-            swap(digits[0], digits[1]);
-            return digits;
-        }
-        //一般情况
-        for (int i = Size - 1; i&gt;0; --i)
-        {
-            if (digits[i]&gt;9)
-            {
-                digits[i] %= 10;
-                digits[i - 1] += 1;
-            }
-            //讨论原数组中第一个元素等于9时的情况
-            if ((i - 1) == 0 &amp;&amp; digits[0]&gt;9)
-            {
-                int second = digits[0] / 10;
-                digits.push_back(second);
-                digits[0] %= 10;
-                for (int j = 0; j &lt;= Size; j++)
-                    swap(digits[j], digits[Size]);
-            }
-        }
-        return digits;
-
+    void rotate(vector&lt;int&gt;&amp; nums, int k) {
+        for (int j = 0; j&lt;k; j++)
+            rotate1(nums);
     }
-};</code></pre><h4 id="解法二：模拟十进制加法器-执行用时-0ms，内存消耗6-6MB"><a href="#解法二：模拟十进制加法器-执行用时-0ms，内存消耗6-6MB" class="headerlink" title="解法二：模拟十进制加法器 (执行用时 0ms，内存消耗6.6MB)"></a>解法二：模拟十进制加法器 (执行用时 0ms，内存消耗6.6MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/******************************************************
-模拟十进制加法器 (执行用时 0ms，内存消耗6.6MB)
-思路：从末位向前逐位模拟十进制加法器，首位进行单独判断
-***********************************************************/</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">{</span>
+    void rotate1(vector&lt;int&gt;&amp; nums1) {
+        int Size1 = nums1.size();
+        int temp = nums1[Size1 - 1];
+        for (int i = Size1 - 1; i&gt;0; i--)
+        {
+            nums1[i] = nums1[i - 1];
+        }
+        nums1[0] = temp;
+    }
+};</code></pre><h4 id="解法二：老实的一步步移动-超出时间限制"><a href="#解法二：老实的一步步移动-超出时间限制" class="headerlink" title="解法二：老实的一步步移动 (超出时间限制)"></a>解法二：老实的一步步移动 (超出时间限制)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*********************************
+基于旋转一次的for循环方法 (超出时间限制)
+思路：先完成旋转一次时的基本函数，
+然后再for循环K次。
+*****************************/</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">plusOne</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> digits<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> size <span class="token operator">=</span> digits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token operator">--</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>digits<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token operator">++</span>digits<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                <span class="token keyword">return</span> digits<span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">rotate</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">>=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            k <span class="token operator">%</span><span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>k<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">int</span> temp <span class="token operator">=</span> nums<span class="token punctuation">[</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    nums<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+                k<span class="token operator">--</span><span class="token punctuation">;</span>
             <span class="token punctuation">}</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//全是9的时候的情况</span>
-                digits<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-                digits<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">else</span>
-                digits<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> digits<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法三：用一个数组保留后k位数组，将前面得数组向后移动k位，再写入前面得数组-执行用时12ms-内存消耗9-9MB"><a href="#解法三：用一个数组保留后k位数组，将前面得数组向后移动k位，再写入前面得数组-执行用时12ms-内存消耗9-9MB" class="headerlink" title="解法三：用一个数组保留后k位数组，将前面得数组向后移动k位，再写入前面得数组(执行用时12ms,内存消耗9.9MB)"></a>解法三：用一个数组保留后k位数组，将前面得数组向后移动k位，再写入前面得数组(执行用时12ms,内存消耗9.9MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">void</span> <span class="token function">rotate</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">>=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            k <span class="token operator">%</span><span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">a</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> idx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> k<span class="token punctuation">;</span> i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//保留后k位数据</span>
+            <span class="token punctuation">{</span>
+                a<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                idx<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            idx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//将前面数据移动k位</span>
+            <span class="token punctuation">{</span>
+                nums<span class="token punctuation">[</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> idx<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                idx<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//将后k位数据写入</span>
+            <span class="token punctuation">{</span>
+                nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
@@ -568,37 +579,30 @@ public:
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> nums<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组的大小 Size："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> num<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组的大小 Size: "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
     <span class="token keyword">int</span> Size<span class="token punctuation">;</span>
     cin <span class="token operator">>></span> Size<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组的元素： "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
     <span class="token keyword">int</span> Currval<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入数组的元素："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> Size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
         cin <span class="token operator">>></span> Currval<span class="token punctuation">;</span>
-        nums<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>Currval<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        num<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>Currval<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-
-    Solution2 answer<span class="token punctuation">;</span>
-    answer<span class="token punctuation">.</span><span class="token function">plusOne</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">//迭代器遍历输出加一后的数组</span>
+    Solution answer<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> K<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入旋转次数K："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> K<span class="token punctuation">;</span>
+    answer<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> K<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"旋转K次后新数组为： "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
     vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>it <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> nums<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>it<span class="token punctuation">)</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token operator">*</span>it <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
-
-    cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> n <span class="token operator">:</span> nums<span class="token punctuation">)</span>
-        cout <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
-
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>it <span class="token operator">=</span> num<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> num<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span><span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token operator">*</span>it<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
 
     <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -757,9 +761,9 @@ public:
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Leetcode066》
+                    《Leetcode189》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/13/leetcode066/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/15/leetcode189/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -800,7 +804,7 @@ public:
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2020/04/13/leetcode066/',
+        id: '2020/04/15/leetcode189/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1083,32 +1087,36 @@ public:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/04/14/leetcode169/">
+                <a href="/2020/04/15/leetcode189/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="Leetcode169">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Leetcode189">
                         
-                        <span class="card-title">Leetcode169</span>
+                        <span class="card-title">Leetcode189</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LeetCode169：多数元素
+                            LeetCode189：旋转数组
 &#160; &#160; &#160; &#160;
-给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
-你可以假设数组是非空的，并且给定的数组总是
+给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
+```cpp
+示例 1:
+
+输入: [1,2,3,4,5,6,7] 和 k =
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1121,6 +1129,7 @@ public:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1139,30 +1148,27 @@ public:
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/13/leetcode053/">
+                <a href="/2020/04/14/leetcode004/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/40.jpg" class="responsive-img" alt="Leetcode053">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Leetcode004">
                         
-                        <span class="card-title">Leetcode053</span>
+                        <span class="card-title">Leetcode004</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LeetCode053：最大子序和
+                            LeetCode004：寻找两个有序数组的中位数
 &#160; &#160; &#160; &#160;
-给定一个整数数组nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。。
-```cpp
-示例:
-
-输入: [-2,1,
+给定两个大小为 m 和 n 的有序数组 nums1 和 nums2。
+请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-14
                             </span>
                         <span class="publish-author">
                             
