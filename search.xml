@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>Leetcode283</title>
+      <link href="/2020/04/15/leetcode283/"/>
+      <url>/2020/04/15/leetcode283/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode268</title>
+      <link href="/2020/04/15/leetcode268/"/>
+      <url>/2020/04/15/leetcode268/</url>
+      
+        <content type="html"><![CDATA[<center><font color="purple" size="6">LeetCode268：缺失数字</font></center>&#160; &#160; &#160; &#160;<font color="black" size="4">给定一个包含 0, 1, 2, ..., n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。</font>```cpp示例 1:<p>输入: [3,0,1]<br>输出: 2<br>示例 2:</p><p>输入: [9,6,4,2,3,5,7,0,1]<br>输出: 8<br>说明:<br>你的算法应具有线性时间复杂度。<br>你能否仅使用额外常数空间来实现?</p><pre><code>#### 解法一： 基于sort排序和for范围的方法 (执行用时72ms, 内存消耗17.3MB)```cppclass Solution {public:    int missingNumber(vector&lt;int&gt;&amp; nums) {        sort(nums.begin(), nums.end());        int i = 0;        for (auto n : nums)        {            if (n == i)            {                ++i;            }            else                return i;        }        return i;    }};</code></pre><h4 id="解法二：基于高斯公式-执行用时36ms-内存消耗17-1MB"><a href="#解法二：基于高斯公式-执行用时36ms-内存消耗17-1MB" class="headerlink" title="解法二：基于高斯公式(执行用时36ms, 内存消耗17.1MB)"></a>解法二：基于高斯公式(执行用时36ms, 内存消耗17.1MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**************************基于高斯公式((执行用时36ms, 内存消耗17.1MB))思路：运用等差数列前n项和公式***************************/</span><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    <span class="token keyword">int</span> <span class="token function">missingNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">int</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">int</span> result <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> len<span class="token punctuation">)</span><span class="token operator">*</span>len <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> n <span class="token operator">:</span> nums<span class="token punctuation">)</span>            result <span class="token operator">-</span><span class="token operator">=</span> n<span class="token punctuation">;</span>        <span class="token keyword">return</span> result<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="解法三：基于异或运算-执行用时64ms-内存消耗17-4MB"><a href="#解法三：基于异或运算-执行用时64ms-内存消耗17-4MB" class="headerlink" title="解法三：基于异或运算 (执行用时64ms, 内存消耗17.4MB)"></a>解法三：基于异或运算 (执行用时64ms, 内存消耗17.4MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*****************************************************************************************************基于异或运算 (执行用时64ms, 内存消耗17.4MB)思路：此题可以采用排序的方式，只不过较慢，也可以采用等差数列求和的方式，但是有溢出的风险，即使采用了long long避免的溢出也只是测试用例不够狠，是完全可以导致越界的，所以最好不采用该方法，此题较好的方法是采用异或运算^.因为异或运算是对于二进制中每一位，如果相同则为0，如果不同则为1，所以对于两个相同的数，进行异或运算直接就为0了，同时异或运算也具有交换率->a^b^c=a^c^b,此题中1到n中缺失了一个数，如果我们再次从头到尾对1到n完整数字进行异或运算，这样就导致在所有异或运算的数字中出了哪个缺失的数字，剩下全部都出现了两次，所以这样出现两次的两两进行异或运算就为0了，而对于任何数与0进行异或运算，由于0的二进制全部为0所以对于其他数字，如果为0的位置，由于与0相同所以结果还是0，对于为1的位置，由于与0不相同所以全部都为1所以相当于没有任何变化，所以所有的0与剩下那个数进行异或运算还是那个剩下的数字，所以该数字就缺失那个数字。两个相同进行异或运算会为0的特性很重要，面试题很多变形。*******************************************************************************************************/</span><span class="token keyword">class</span> <span class="token class-name">Solution3</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    <span class="token keyword">int</span> <span class="token function">missingNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>            sum <span class="token operator">^</span><span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">^</span> i<span class="token punctuation">;</span>        <span class="token keyword">return</span> sum<span class="token operator">^</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode189</title>
       <link href="/2020/04/15/leetcode189/"/>
       <url>/2020/04/15/leetcode189/</url>
