@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>剑指offer64</title>
+      <link href="/2020/04/17/jian-zhi-offer64/"/>
+      <url>/2020/04/17/jian-zhi-offer64/</url>
+      
+        <content type="html"><![CDATA[<center><font color="purple" size="6">剑指offer64：求1+2+…+n</font></center><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>&#160; &#160; &#160; &#160;求 1+2+…+n ，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。</p><pre class="line-numbers language-cpp"><code class="language-cpp">示例 <span class="token number">1</span>：输入<span class="token operator">:</span> n <span class="token operator">=</span> <span class="token number">3</span>输出<span class="token operator">:</span> <span class="token number">6</span>示例 <span class="token number">2</span>：输入<span class="token operator">:</span> n <span class="token operator">=</span> <span class="token number">9</span>输出<span class="token operator">:</span> <span class="token number">45</span>限制：<span class="token number">1</span> <span class="token operator">&lt;=</span> n <span class="token operator">&lt;=</span> <span class="token number">10000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="利用逻辑与的短路特性实现递归终止-执行用时：0ms，内存消耗6-3MB"><a href="#利用逻辑与的短路特性实现递归终止-执行用时：0ms，内存消耗6-3MB" class="headerlink" title="利用逻辑与的短路特性实现递归终止 (执行用时：0ms，内存消耗6.3MB)"></a>利用逻辑与的短路特性实现递归终止 (执行用时：0ms，内存消耗6.3MB)</h4><p>&#160; &#160; &#160; &#160; 重点是输入0的时候输出0来结束递归。缺点：递归的层数不能太深&lt;3000</p><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    <span class="token keyword">int</span> <span class="token function">sumNums</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">int</span> ans <span class="token operator">=</span> n<span class="token punctuation">;</span>        ans <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>ans <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">sumNums</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="解法二：利用bool或者char类型计算二维数组的大小-执行用时：0ms，内存消耗6MB"><a href="#解法二：利用bool或者char类型计算二维数组的大小-执行用时：0ms，内存消耗6MB" class="headerlink" title="解法二：利用bool或者char类型计算二维数组的大小 (执行用时：0ms，内存消耗6MB)"></a>解法二：利用bool或者char类型计算二维数组的大小 (执行用时：0ms，内存消耗6MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*****************************************************解法二：利用bool或者char类型计算二维数组的大小 (执行用时：0ms，内存消耗6MB)思路：bool类型和char类型都占用一个字节长度用sizeof计算数组a所占空间的大小为n*(n+1)，再右移一位相当于除2，等价于等差数列的前n项和公式sizeof用来计算一个变量，或者数据类型的长度，以字节为单位。对于直接的调用sizeof，如果是数组首地址，sizeof会输出数组所占地址空间的大小（字节为单位)。*****************************************************/</span><span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">{</span><span class="token keyword">public</span><span class="token operator">:</span>    <span class="token keyword">int</span> <span class="token function">sumNums</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">char</span> a<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//bool类型和char类型都占用一个字节长度</span>        <span class="token keyword">return</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//用sizeof计算数组a所占空间的大小为n*(n+1)，再右移一位相当于除2，等价于等差数列的前n项和公式                      </span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 剑指offer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode283</title>
       <link href="/2020/04/15/leetcode283/"/>
       <url>/2020/04/15/leetcode283/</url>
