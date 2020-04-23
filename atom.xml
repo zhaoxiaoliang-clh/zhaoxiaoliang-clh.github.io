@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaoxiaoliang-clh.github.io/"/>
-  <updated>2020-04-21T01:57:09.657Z</updated>
+  <updated>2020-04-23T09:26:13.842Z</updated>
   <id>https://zhaoxiaoliang-clh.github.io/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode414</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/23/leetcode414/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2020/04/23/leetcode414/</id>
+    <published>2020-04-23T09:03:19.000Z</published>
+    <updated>2020-04-23T09:26:13.842Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;Leetcode414：第三大的数&lt;/font&gt;&lt;/center&gt;
+
+&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="https://zhaoxiaoliang-clh.github.io/categories/Leetcode/"/>
+    
+    
+      <category term="Leetcode" scheme="https://zhaoxiaoliang-clh.github.io/tags/Leetcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>剑指offer39</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/23/jian-zhi-offer39/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2020/04/23/jian-zhi-offer39/</id>
+    <published>2020-04-23T01:24:27.000Z</published>
+    <updated>2020-04-23T01:27:52.436Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;剑指offer39：数组中出现次数超过一半的数字&lt;/font&gt;&lt;/center&gt;
+
+&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
+    
+    
+      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
+    
+  </entry>
   
   <entry>
     <title>Leetcode167</title>
@@ -510,62 +566,6 @@
     
     
       <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指offer03</title>
-    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/11/jian-zhi-offer03/"/>
-    <id>https://zhaoxiaoliang-clh.github.io/2020/04/11/jian-zhi-offer03/</id>
-    <published>2020-04-11T03:07:26.000Z</published>
-    <updated>2020-04-17T01:18:46.406Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;剑指offer03：查找数组中重复的数字&lt;/font&gt;&lt;/center&gt;
-
-&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
-    
-    
-      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指offer04</title>
-    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/11/jian-zhi-offer04/"/>
-    <id>https://zhaoxiaoliang-clh.github.io/2020/04/11/jian-zhi-offer04/</id>
-    <published>2020-04-11T02:52:04.000Z</published>
-    <updated>2020-04-17T01:17:47.461Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;剑指offer04：二维数组元素查找&lt;/font&gt;&lt;/center&gt;
-
-&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
-    
-    
-      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
