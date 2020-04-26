@@ -4,13 +4,21 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Offer成长的起点, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="Leetcode485, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="
+    <meta name="description" content="Leetcode485：最大连续1的个数
 
-“生活就是舞台，在每一处盛开。 你我为梦添色彩，无人可替代。。。。。。” 当写下这篇记录自己准备Offer的起点文章时，耳机里单曲循环着由央视著名主持人合唱的这首《生活就是舞台》。是啊，生活就是舞台，时刻充满期待。就比如当前的我，一无所">
+题目描述示例 1:
+
+输入: [1,1,0,1,1,1]
+输出: 3
+解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.
+注意：
+
+输入的数组只包含 0 和1。
+输入数组的长度">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +26,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Offer成长的起点 | Hexo</title>
+    <title>Leetcode485 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -306,13 +314,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Offer成长的起点
+                        Leetcode485
                     </div>
                 </div>
             </div>
@@ -322,10 +330,99 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -334,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/成长/" target="_blank">
-                            <span class="chip bg-color">成长</span>
+                        <a href="/tags/Leetcode/" target="_blank">
+                            <span class="chip bg-color">Leetcode</span>
                         </a>
                         
                     </div>
@@ -346,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/成长/" class="post-category" target="_blank">
-                            成长
+                        <a href="/categories/Leetcode/" class="post-category" target="_blank">
+                            Leetcode
                         </a>
                         
                     </div>
@@ -358,7 +455,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-20
+                    2020-04-26
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -372,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    939
+                    196
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
                 
@@ -395,13 +492,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div align="middle"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27896659&auto=1&height=66"></iframe></div>
+                <center><font color="purple" size="6">Leetcode485：最大连续1的个数</font></center>
 
-<h2 id="“生活就是舞台，在每一处盛开。-你我为梦添色彩，无人可替代。。。。。。”-当写下这篇记录自己准备Offer的起点文章时，耳机里单曲循环着由央视著名主持人合唱的这首《生活就是舞台》。是啊，生活就是舞台，时刻充满期待。就比如当前的我，一无所知，对自己的未来没有准确清晰的定位，目前没有论文，没有专利，没有项目，有的只是一颗无所畏惧的心，一颗永不服输的心，还有那份执着吧！"><a href="#“生活就是舞台，在每一处盛开。-你我为梦添色彩，无人可替代。。。。。。”-当写下这篇记录自己准备Offer的起点文章时，耳机里单曲循环着由央视著名主持人合唱的这首《生活就是舞台》。是啊，生活就是舞台，时刻充满期待。就比如当前的我，一无所知，对自己的未来没有准确清晰的定位，目前没有论文，没有专利，没有项目，有的只是一颗无所畏惧的心，一颗永不服输的心，还有那份执着吧！" class="headerlink" title="“生活就是舞台，在每一处盛开。 你我为梦添色彩，无人可替代。。。。。。” 当写下这篇记录自己准备Offer的起点文章时，耳机里单曲循环着由央视著名主持人合唱的这首《生活就是舞台》。是啊，生活就是舞台，时刻充满期待。就比如当前的我，一无所知，对自己的未来没有准确清晰的定位，目前没有论文，没有专利，没有项目，有的只是一颗无所畏惧的心，一颗永不服输的心，还有那份执着吧！"></a><font color="black" size="5">“生活就是舞台，在每一处盛开。 你我为梦添色彩，无人可替代。。。。。。” 当写下这篇记录自己准备Offer的起点文章时，耳机里单曲循环着由央视著名主持人合唱的这首《生活就是舞台》。是啊，生活就是舞台，时刻充满期待。就比如当前的我，一无所知，对自己的未来没有准确清晰的定位，目前没有论文，没有专利，没有项目，有的只是一颗无所畏惧的心，一颗永不服输的心，还有那份执着吧！</font></h2><center><font color="black" size="6">Offer成长的起点</font></center>
-&#160; &#160; &#160; &#160;<font color="black" size="4">2019年还有10天左右就结束了它的生命周期，而自己也到了研二上学期的末尾，转眼就是毕业问题，毕业问题就是生存和发展问题。 记得还是从初中那会，父亲就常在学习上教导我：车轮不圆，早点转。那时，心里就暗暗下定决心，我要做自己的主人，相信汗水的过程！果不其然，初中的经历可以说是辉煌的，而现在的我是当年同等水平同学中发展还不错的。而这一次，即将站在人生的重要选择口，再一次回忆起父亲的教导，我想再来一次 <font color="red" size="4">“二次呼吸”</font>(自己发明的词语，源于初中连续三年参加校级冬季阳光体育运动长跑10KM的经验积累，内涵是：当听到发令枪响起，心跳加速，呼吸加速，到经历了平稳过度后，自主呼吸的结果，此刻心跳平稳，呼吸均匀，全身心的保持专注：长跑！)</font>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><pre class="line-numbers language-cpp"><code class="language-cpp">示例 <span class="token number">1</span><span class="token operator">:</span>
 
-<h2 id="起于现在"><a href="#起于现在" class="headerlink" title="起于现在"></a>起于现在</h2><p>&#160; &#160; &#160; &#160;<font color="black" size="4">“什么时候开始都不算晚，要克服自己心里的畏惧感，多动手，多实践，你也可以的！” 这是目前对自己的激励，毕竟这个“起点”对我来说需要做很多工作，庆幸的是自己已经有了长跑的路线，接来下就是日复一日的坚持和付出。<br>&#160; &#160; &#160; &#160;暂时给自己定的目标: <strong>偏业务的算法工程师 &gt; 开发工程师</strong><br>&#160; &#160; &#160; &#160;通过一天的信息搜集整理，目前自己要先把基础打好，毕竟我们的手艺是 <strong>“coding”</strong>，下面是自己的学习内容：<br>&#160; &#160; &#160; &#160;(1) C++ Primer Plus (第6版) 中文版<br>&#160; &#160; &#160; &#160;(2) 数据结构 (C++语言版) 第3版 邓俊辉编著<br>&#160; &#160; &#160; &#160;(3) LeetCode<br>&#160; &#160; &#160; &#160;(4) 剑指Offer</font><br>&#160; &#160; &#160; &#160;<font color="black" size="4">这些资料，我这里都有PDF版本，有想要一起努力的小伙伴可以微信联系我，我私发给你百度云链接，顺便以书会友，加强技术的交流。</font><br><img src="C++.png" alt></p>
-<h2 id="在于未来"><a href="#在于未来" class="headerlink" title="在于未来"></a>在于未来</h2><p>&#160; &#160; &#160; &#160;<font color="black" size="4"> <strong>“今天的挥汗如雨，是为了明天的挥金如土！”</strong> 今天开始，以后的每一天小亮都会在自己的个人博客里发布至少一篇博文记录自己的成长，记录自己的一点一滴。写到这里，又想起了自己的好基友“狗蛋”前几天提到的：所经历的都精彩！<br>&#160; &#160; &#160; &#160;加油吧！少年，曾经的 <strong>“试玉要烧三日满，辨材须待七年期”</strong>，现如今已剩下不到一年，是该兑现诺言的时候了。<br>&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160;——2019年12月20日 己亥丙子辛卯 于北洋园</font></p>
+输入<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+输出<span class="token operator">:</span> <span class="token number">3</span>
+解释<span class="token operator">:</span> 开头的两位和最后的三位都是连续<span class="token number">1</span>，所以最大连续<span class="token number">1</span>的个数是 <span class="token number">3</span><span class="token punctuation">.</span>
+注意：
+
+输入的数组只包含 <span class="token number">0</span> 和<span class="token number">1</span>。
+输入数组的长度是正整数，且不超过 <span class="token number">10</span><span class="token punctuation">,</span><span class="token number">000</span>。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法一：基于sort的暴力法"><a href="#解法一：基于sort的暴力法" class="headerlink" title="解法一：基于sort的暴力法"></a>解法一：基于sort的暴力法</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">findMaxConsecutiveOnes</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> max<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                flag<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                max<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        max<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">sort</span><span class="token punctuation">(</span>max<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> max<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> max<span class="token punctuation">[</span>max<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法二：简洁方法"><a href="#解法二：简洁方法" class="headerlink" title="解法二：简洁方法"></a>解法二：简洁方法</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">findMaxConsecutiveOnes</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                num<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span>
+                num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            max <span class="token operator">=</span> max<span class="token operator">></span>num <span class="token operator">?</span> max<span class="token operator">:</span>num<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> max<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -560,9 +700,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Offer成长的起点》
+                    《Leetcode485》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/12/20/offer-cheng-chang-de-qi-dian/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/26/leetcode485/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -603,7 +743,7 @@
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2019/12/20/offer-cheng-chang-de-qi-dian/',
+        id: '2020/04/26/leetcode485/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -886,46 +1026,58 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/12/22/sublime-text-pei-zhi-c-he-python-huan-jing/">
+                <a href="/2020/04/26/leetcode485/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="Sublime Text 配置C++和Python环境">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="Leetcode485">
                         
-                        <span class="card-title">Sublime Text 配置C++和Python环境</span>
+                        <span class="card-title">Leetcode485</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Sublime Text 一款用于代码、标记和散文的精致文本编辑器, 不管你是新手小白，还是编程老大哥，都推荐给你Sublime Text。今天，我们来基于Sublime Text 配置C++和Python环境，“工欲善其事，必先利其器”！
+                            Leetcode485：最大连续1的个数
+
+题目描述示例 1:
+
+输入: [1,1,0,1,1,1]
+输出: 3
+解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.
+注意：
+
+输入的数组只包含 0 和1。
+输入数组的长度
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Sublime-Text/" class="post-category" target="_blank">
-                                    Sublime Text
+                            <a href="/categories/Leetcode/" class="post-category" target="_blank">
+                                    Leetcode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Sublime-Text/" target="_blank">
-                        <span class="chip bg-color">Sublime Text</span>
+                    <a href="/tags/Leetcode/" target="_blank">
+                        <span class="chip bg-color">Leetcode</span>
                     </a>
                     
                 </div>
@@ -939,31 +1091,38 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/18/leetcode/">
+                <a href="/2020/04/26/jian-zhi-offer42/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="LeetCode">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="剑指offer42">
                         
-                        <span class="card-title">LeetCode</span>
+                        <span class="card-title">剑指offer42</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            时间过得很快，已经到了研二上学期期末了。虽然已经快一年没有课，但是每天的生活依旧是匆匆忙忙的，无时无刻不在为毕业发愁。现在，想做点自己喜欢的事情，提前为明年的秋招生计做准备吧。那就先从LeetCode开始！！！
+                            剑指offer42：和为S的两个数字
+
+题目描述输入一个递增排序的数组和一个数字S，在数组中查找两个数，
+使得他们的和正好是S，如果有多对数字的和等于S，输出两个数的乘积最小的。
+
+输出描述:
+对应每个测试案例，输出两个数，小的先输出。
+解
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/刷题/" class="post-category" target="_blank">
-                                    刷题
+                            <a href="/categories/剑指offer/" class="post-category" target="_blank">
+                                    剑指offer
                                 </a>
                             
                             
@@ -973,8 +1132,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/刷题/" target="_blank">
-                        <span class="chip bg-color">刷题</span>
+                    <a href="/tags/剑指offer/" target="_blank">
+                        <span class="chip bg-color">剑指offer</span>
                     </a>
                     
                 </div>
@@ -1024,10 +1183,110 @@
     });
 </script>
 
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
     
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
     <footer class="page-footer bg-color">
     <div class="container row center-align">
