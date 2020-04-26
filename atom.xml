@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaoxiaoliang-clh.github.io/"/>
-  <updated>2020-04-24T03:15:39.896Z</updated>
+  <updated>2020-04-26T02:22:15.311Z</updated>
   <id>https://zhaoxiaoliang-clh.github.io/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>剑指offer42</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/26/jian-zhi-offer42/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2020/04/26/jian-zhi-offer42/</id>
+    <published>2020-04-26T02:20:53.000Z</published>
+    <updated>2020-04-26T02:22:15.311Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;剑指offer42：和为S的两个数字&lt;/font&gt;&lt;/center&gt;
+
+&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
+    
+    
+      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>剑指offer40</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/25/jian-zhi-offer40/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2020/04/25/jian-zhi-offer40/</id>
+    <published>2020-04-25T01:42:42.000Z</published>
+    <updated>2020-04-25T01:45:44.670Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;剑指offer40：最小的K个数&lt;/font&gt;&lt;/center&gt;
+
+&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
+    
+    
+      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode747</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/24/leetcode747/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2020/04/24/leetcode747/</id>
+    <published>2020-04-24T08:16:11.000Z</published>
+    <updated>2020-04-24T08:17:05.541Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;Leetcode747：至少是其他数字两倍的最大数&lt;/font&gt;&lt;/center&gt;
+
+&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="https://zhaoxiaoliang-clh.github.io/categories/Leetcode/"/>
+    
+    
+      <category term="Leetcode" scheme="https://zhaoxiaoliang-clh.github.io/tags/Leetcode/"/>
+    
+  </entry>
   
   <entry>
     <title>Leetcode136</title>
@@ -478,87 +562,6 @@
           &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;LeetCode169：多数元素&lt;/font&gt;&lt;/center&gt;
 &amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot; size=&quot;4&quot;&gt;
 给定一个大小为 n
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Leetcode066</title>
-    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/13/leetcode066/"/>
-    <id>https://zhaoxiaoliang-clh.github.io/2020/04/13/leetcode066/</id>
-    <published>2020-04-13T04:13:12.000Z</published>
-    <updated>2020-04-13T04:16:20.567Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;LeetCode066：加一&lt;/font&gt;&lt;/center&gt;
-&amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Leetcode053</title>
-    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/13/leetcode053/"/>
-    <id>https://zhaoxiaoliang-clh.github.io/2020/04/13/leetcode053/</id>
-    <published>2020-04-13T03:44:30.000Z</published>
-    <updated>2020-04-13T03:47:51.737Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;LeetCode053：最大子序和&lt;/font&gt;&lt;/center&gt;
-&amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/categories/LeetCode/"/>
-    
-    
-      <category term="LeetCode" scheme="https://zhaoxiaoliang-clh.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Leetcode035</title>
-    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/12/leetcode035/"/>
-    <id>https://zhaoxiaoliang-clh.github.io/2020/04/12/leetcode035/</id>
-    <published>2020-04-12T15:57:32.000Z</published>
-    <updated>2020-04-12T16:05:14.685Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;LeetCode035：搜索插入位置&lt;/font&gt;&lt;/center&gt;
-&amp;#160; &amp;#160; &amp;#160; &amp;#160;&lt;font color=&quot;black&quot;
         
       
     

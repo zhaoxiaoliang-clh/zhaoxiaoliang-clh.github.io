@@ -4,13 +4,18 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C++之直角坐标系和极坐标系的转化, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="Leetcode747, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="C++之直角坐标系和极坐标系的转化
+    <meta name="description" content="Leetcode747：至少是其他数字两倍的最大数
 
-1. 转化思路&amp;#160; &amp;#160; &amp;#160; &amp;#160;关键在于编写一个将直角坐标转换为极坐标的函数。该函数接受一个rect参数，并返回一个polar结构。这需要 使用数学库中的函数，因此程">
+题目描述在一个给定的数组nums中，总是存在一个最大元素 。
+查找数组中的最大元素是否至少是数组中每个其他数字的两倍。
+如果是，则返回最大元素的索引，否则返回-1。
+
+示例 1:
+输入:">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +23,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>C++之直角坐标系和极坐标系的转化 | Hexo</title>
+    <title>Leetcode747 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -306,13 +311,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        C++之直角坐标系和极坐标系的转化
+                        Leetcode747
                     </div>
                 </div>
             </div>
@@ -423,8 +428,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/C/" target="_blank">
-                            <span class="chip bg-color">C++</span>
+                        <a href="/tags/Leetcode/" target="_blank">
+                            <span class="chip bg-color">Leetcode</span>
                         </a>
                         
                     </div>
@@ -435,8 +440,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/C/" class="post-category" target="_blank">
-                            C++
+                        <a href="/categories/Leetcode/" class="post-category" target="_blank">
+                            Leetcode
                         </a>
                         
                     </div>
@@ -447,7 +452,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-17
+                    2020-04-24
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -461,7 +466,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    279
+                    265
                 </div>
                 
 
@@ -484,70 +489,55 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center><font color="purple" size="6">C++之直角坐标系和极坐标系的转化</font></center>
+                <center><font color="purple" size="6">Leetcode747：至少是其他数字两倍的最大数</font></center>
 
-<h5 id="1-转化思路"><a href="#1-转化思路" class="headerlink" title="1. 转化思路"></a>1. 转化思路</h5><p>&#160; &#160; &#160; &#160;<font color="black" size="4">关键在于编写一个将直角坐标转换为极坐标的函数。该函数接受一个rect参数，并返回一个polar结构。这需要 使用数学库中的函数，因此程序必须包含 头文件cmath。根据毕达哥拉斯定理，使用水平和垂直坐标来计算距离，使用数学库中的atan2()函数计算角度：</font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">distance <span class="token operator">=</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>x <span class="token operator">*</span> x <span class="token operator">+</span> y <span class="token operator">*</span> y<span class="token punctuation">)</span>
-angle <span class="token operator">=</span> <span class="token function">atan2</span><span class="token punctuation">(</span>y<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h5 id="2-一个例子"><a href="#2-一个例子" class="headerlink" title="2. 一个例子"></a>2. 一个例子</h5><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><pre class="line-numbers language-cpp"><code class="language-cpp">在一个给定的数组nums中，总是存在一个最大元素 。
+查找数组中的最大元素是否至少是数组中每个其他数字的两倍。
+如果是，则返回最大元素的索引，否则返回<span class="token operator">-</span><span class="token number">1</span>。
 
-<span class="token keyword">struct</span> polar
-<span class="token punctuation">{</span>
-    <span class="token keyword">double</span> distance<span class="token punctuation">;</span>
-    <span class="token keyword">double</span> angle<span class="token punctuation">;</span>
+示例 <span class="token number">1</span><span class="token operator">:</span>
+输入<span class="token operator">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+输出<span class="token operator">:</span> <span class="token number">1</span>
+解释<span class="token operator">:</span> <span class="token number">6</span>是最大的整数<span class="token punctuation">,</span> 对于数组中的其他整数<span class="token punctuation">,</span>
+<span class="token number">6</span>大于数组中其他元素的两倍。<span class="token number">6</span>的索引是<span class="token number">1</span><span class="token punctuation">,</span> 所以我们返回<span class="token number">1</span><span class="token punctuation">.</span>
 
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-<span class="token keyword">struct</span>  rect
-<span class="token punctuation">{</span>
-    <span class="token keyword">double</span> x<span class="token punctuation">;</span>
-    <span class="token keyword">double</span> y<span class="token punctuation">;</span>
+示例 <span class="token number">2</span><span class="token operator">:</span>
+输入<span class="token operator">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+输出<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span>
+解释<span class="token operator">:</span> <span class="token number">4</span>没有超过<span class="token number">3</span>的两倍大<span class="token punctuation">,</span> 所以我们返回 <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>
 
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-polar <span class="token function">rect_to_polar</span><span class="token punctuation">(</span>rect xypos<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">show_polar</span><span class="token punctuation">(</span>polar dapos<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token keyword">const</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-    rect rplace<span class="token punctuation">;</span>
-    polar pplace<span class="token punctuation">;</span>
-
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter the x and y values: "</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>cin <span class="token operator">>></span> rplace<span class="token punctuation">.</span>x <span class="token operator">>></span> rplace<span class="token punctuation">.</span>y<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        pplace  <span class="token operator">=</span> <span class="token function">rect_to_polar</span><span class="token punctuation">(</span>rplace<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">show_polar</span><span class="token punctuation">(</span>pplace<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Next two numbers (q to quit):"</span><span class="token punctuation">;</span>
-
+提示<span class="token operator">:</span>
+nums 的长度范围在<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">]</span><span class="token punctuation">.</span>
+每个 nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> 的整数范围在 <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法一：基于单标记和sort排序的方法"><a href="#解法一：基于单标记和sort排序的方法" class="headerlink" title="解法一：基于单标记和sort排序的方法"></a>解法一：基于单标记和sort排序的方法</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">dominantIndex</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> Max <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> flag<span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span>Max<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                Max <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                flag <span class="token operator">=</span> i<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">sort</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nums<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        nums<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> n <span class="token operator">:</span> nums<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> n<span class="token punctuation">)</span><span class="token operator">></span>Max<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> flag<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Done.\n"</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-polar <span class="token function">rect_to_polar</span><span class="token punctuation">(</span>rect xypos<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-    polar answer<span class="token punctuation">;</span>
-
-    answer<span class="token punctuation">.</span>distance <span class="token operator">=</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>xypos<span class="token punctuation">.</span>x <span class="token operator">*</span> xypos<span class="token punctuation">.</span>x <span class="token operator">+</span> xypos<span class="token punctuation">.</span>y <span class="token operator">*</span> xypos<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    answer<span class="token punctuation">.</span>angle <span class="token operator">=</span> <span class="token function">atan2</span><span class="token punctuation">(</span>xypos<span class="token punctuation">.</span>y<span class="token punctuation">,</span> xypos<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> answer<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">void</span> <span class="token function">show_polar</span><span class="token punctuation">(</span>polar dapos<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> <span class="token keyword">double</span> Rad_to_deg <span class="token operator">=</span> <span class="token number">57.29577951</span><span class="token punctuation">;</span>
-
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"distance =  "</span> <span class="token operator">&lt;&lt;</span> dapos<span class="token punctuation">.</span>distance<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">", angle ="</span> <span class="token operator">&lt;&lt;</span> dapos<span class="token punctuation">.</span>angle <span class="token operator">*</span> Rad_to_deg<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">" degrees\n"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="001.JPG" alt></p>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -706,9 +696,9 @@ polar <span class="token function">rect_to_polar</span><span class="token punctu
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《C++之直角坐标系和极坐标系的转化》
+                    《Leetcode747》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/17/c-zhi-zhi-jiao-zuo-biao-xi-he-ji-zuo-biao-xi-de-zhuan-hua/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/24/leetcode747/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -749,7 +739,7 @@ polar <span class="token function">rect_to_polar</span><span class="token punctu
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2020/01/17/c-zhi-zhi-jiao-zuo-biao-xi-he-ji-zuo-biao-xi-de-zhuan-hua/',
+        id: '2020/04/24/leetcode747/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1036,33 +1026,37 @@ polar <span class="token function">rect_to_polar</span><span class="token punctu
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/01/17/c-zhi-di-gui/">
+                <a href="/2020/04/25/jian-zhi-offer40/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="C++之递归">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="剑指offer40">
                         
-                        <span class="card-title">C++之递归</span>
+                        <span class="card-title">剑指offer40</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++之递归
+                            剑指offer40：最小的K个数
 
-1. 递归介绍&#160; &#160; &#160; &#160;C++函数有一种有趣的特点————可以调用自己(然而，与C语言不同的是，C++不允许main()调用自己)，这种功能被称为递归。尽管递归在特定的编程(例如人
+题目描述输入n个整数，找出其中最小的K个数。
+例如输入4,5,1,6,2,7,3,8这8个数字，
+则最小的4个数字是1,2,3,4,。
+解法一：基于sort排序的方法class Solution {
+pu
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-17
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-25
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category" target="_blank">
-                                    C++
+                            <a href="/categories/剑指offer/" class="post-category" target="_blank">
+                                    剑指offer
                                 </a>
                             
                             
@@ -1072,8 +1066,8 @@ polar <span class="token function">rect_to_polar</span><span class="token punctu
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/剑指offer/" target="_blank">
+                        <span class="chip bg-color">剑指offer</span>
                     </a>
                     
                 </div>
@@ -1087,33 +1081,39 @@ polar <span class="token function">rect_to_polar</span><span class="token punctu
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/16/c-an-zhi-chuan-di-jie-gou/">
+                <a href="/2020/04/24/leetcode136/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="C++按值传递结构">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Leetcode136">
                         
-                        <span class="card-title">C++按值传递结构</span>
+                        <span class="card-title">Leetcode136</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++按值传递结构
+                            Leetcode136：只出现一次的数字
 
-1. 传递和返回结构&#160; &#160; &#160; &#160;C++使用结构编程时，最直接的方式是处理基本类型那样来处理结构：也就是说，将结构作为参数传递，并在需要时将结构用作返回值使用。然而，按值传递结构
+题目描述给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。
+找出那个只出现了一次的元素。
+
+说明：
+你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+
+示例
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category" target="_blank">
-                                    C++
+                            <a href="/categories/Leetcode/" class="post-category" target="_blank">
+                                    Leetcode
                                 </a>
                             
                             
@@ -1123,8 +1123,8 @@ polar <span class="token function">rect_to_polar</span><span class="token punctu
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/Leetcode/" target="_blank">
+                        <span class="chip bg-color">Leetcode</span>
                     </a>
                     
                 </div>
