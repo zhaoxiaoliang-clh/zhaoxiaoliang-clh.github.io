@@ -4,16 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Leetcode53-1, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="剑指offer05, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="Leetcode53-1：在排序数组中查找数字 I
+    <meta name="description" content="剑指offer05：替换空格
 
-题目描述&amp;#160; &amp;#160; &amp;#160; &amp;#160;统计一个数字在排序数组中出现的次数。
-示例 1:
-
-输入: nums = [5,7,7,8,8,10], target = ">
+题目描述请实现一个函数，将一个字符串中的每个空格替换成“%20”。
+例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
+解法一：判断空格，后移两位元素clas">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Leetcode53-1 | Hexo</title>
+    <title>剑指offer05 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -309,13 +308,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/37.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Leetcode53-1
+                        剑指offer05
                     </div>
                 </div>
             </div>
@@ -426,8 +425,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Leetcode/" target="_blank">
-                            <span class="chip bg-color">Leetcode</span>
+                        <a href="/tags/剑指offer/" target="_blank">
+                            <span class="chip bg-color">剑指offer</span>
                         </a>
                         
                     </div>
@@ -438,8 +437,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Leetcode/" class="post-category" target="_blank">
-                            Leetcode
+                        <a href="/categories/剑指offer/" class="post-category" target="_blank">
+                            剑指offer
                         </a>
                         
                     </div>
@@ -450,7 +449,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-20
+                    2020-04-30
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -464,14 +463,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    451
+                    235
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -487,93 +486,61 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center><font color="purple" size="6">Leetcode53-1：在排序数组中查找数字 I</font></center>
+                <center><font color="purple" size="6">剑指offer05：替换空格</font></center>
 
-<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>&#160; &#160; &#160; &#160;统计一个数字在排序数组中出现的次数。</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">示例 <span class="token number">1</span><span class="token operator">:</span>
-
-输入<span class="token operator">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target <span class="token operator">=</span> <span class="token number">8</span>
-输出<span class="token operator">:</span> <span class="token number">2</span>
-示例 <span class="token number">2</span><span class="token operator">:</span>
-
-输入<span class="token operator">:</span> nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target <span class="token operator">=</span> <span class="token number">6</span>
-输出<span class="token operator">:</span> <span class="token number">0</span>
-
-限制：
-<span class="token number">0</span> <span class="token operator">&lt;=</span> 数组长度 <span class="token operator">&lt;=</span> <span class="token number">50000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="解法一：基于flag标记的暴力法-执行用时20ms-内存消耗13-2MB"><a href="#解法一：基于flag标记的暴力法-执行用时20ms-内存消耗13-2MB" class="headerlink" title="解法一：基于flag标记的暴力法 (执行用时20ms,内存消耗13.2MB)"></a>解法一：基于flag标记的暴力法 (执行用时20ms,内存消耗13.2MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><pre class="line-numbers language-cpp"><code class="language-cpp">请实现一个函数，将一个字符串中的每个空格替换成“<span class="token operator">%</span><span class="token number">20</span>”。
+例如，当字符串为We Are Happy<span class="token punctuation">.</span>则经过替换之后的字符串为We<span class="token operator">%</span>20Are<span class="token operator">%</span>20Happy。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="解法一：判断空格，后移两位元素"><a href="#解法一：判断空格，后移两位元素" class="headerlink" title="解法一：判断空格，后移两位元素"></a>解法一：判断空格，后移两位元素</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token keyword">void</span> <span class="token function">replaceSpace</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>str<span class="token punctuation">,</span> <span class="token keyword">int</span> length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">)</span>
-                flag<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">' '</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//如果存在空格</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> length <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">>=</span> i <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//后面的 元素向后移动两位</span>
+                    str<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> str<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'%'</span><span class="token punctuation">;</span>
+                str<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'2'</span><span class="token punctuation">;</span>
+                str<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+                length <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法二：利用string和find函数"><a href="#解法二：利用string和find函数" class="headerlink" title="解法二：利用string和find函数"></a>解法二：利用string和find函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">void</span> <span class="token function">replaceSpace</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>str<span class="token punctuation">,</span> <span class="token keyword">int</span> length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        string <span class="token function">s</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>i <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            s<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            s<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token string">"%20"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> flag<span class="token punctuation">;</span>
-
+        <span class="token keyword">auto</span> ret <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">strcpy</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="解法二：基于unordered-map的方法-执行用时44ms-内存消耗13-4MB"><a href="#解法二：基于unordered-map的方法-执行用时44ms-内存消耗13-4MB" class="headerlink" title="解法二：基于unordered_map的方法 (执行用时44ms,内存消耗13.4MB)"></a>解法二：基于unordered_map的方法 (执行用时44ms,内存消耗13.4MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        unordered_map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> a<span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-            a<span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
-        unordered_map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
-        it <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>it <span class="token operator">!=</span> a<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> it<span class="token operator">-</span><span class="token operator">></span>second<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="解法三：基于ower-bound和upper-bound的方法-执行用时44ms-内存消耗13-4MB"><a href="#解法三：基于ower-bound和upper-bound的方法-执行用时44ms-内存消耗13-4MB" class="headerlink" title="解法三：基于ower_bound和upper_bound的方法 (执行用时44ms,内存消耗13.4MB)"></a>解法三：基于ower_bound和upper_bound的方法 (执行用时44ms,内存消耗13.4MB)</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/****************************************
-基于ower_bound和upper_bound的方法 (执行用时44ms,内存消耗13.4MB)
-
-upper_bound():返回的是被查序列中第一个大于查找值得指针；
-lower_bound()：返回的是被查序列中第一个大于等于查找值的指针；
-*****************************************/</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution3</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> low <span class="token operator">=</span> <span class="token function">lower_bound</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nums<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token operator">-</span> nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> upp <span class="token operator">=</span> <span class="token function">upper_bound</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nums<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token operator">-</span> nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> upp <span class="token operator">-</span> low<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
+<h4 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unordered_map></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;ctype.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cctype></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> nums<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入有序数组的大小： "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> Size<span class="token punctuation">;</span>
-    cin <span class="token operator">>></span> Size<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> Currval<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入有序数组的元素： "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> Size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        cin <span class="token operator">>></span> Currval<span class="token punctuation">;</span>
-        nums<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>Currval<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">int</span> target<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入查找元素： "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cin <span class="token operator">>></span> target<span class="token punctuation">;</span>
-    Solution answer<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"查找元素在数组中出现的次数为："</span> <span class="token operator">&lt;&lt;</span> answer<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> s<span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"I love you!"</span><span class="token punctuation">;</span>
+    Solution a<span class="token punctuation">;</span>
+    a<span class="token punctuation">.</span><span class="token function">replaceSpace</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">18</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
     <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -732,9 +699,9 @@ lower_bound()：返回的是被查序列中第一个大于等于查找值的指�
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Leetcode53-1》
+                    《剑指offer05》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/20/leetcode53-1/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/30/jian-zhi-offer05/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -775,7 +742,7 @@ lower_bound()：返回的是被查序列中第一个大于等于查找值的指�
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2020/04/20/leetcode53-1/',
+        id: '2020/04/30/jian-zhi-offer05/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1058,50 +1025,52 @@ lower_bound()：返回的是被查序列中第一个大于等于查找值的指�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/04/20/leetcode219/">
+                <a href="/2020/04/30/jian-zhi-offer05/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/39.jpg" class="responsive-img" alt="Leetcode219">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="剑指offer05">
                         
-                        <span class="card-title">Leetcode219</span>
+                        <span class="card-title">剑指offer05</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Leetcode219：存在重复元素 II
+                            剑指offer05：替换空格
 
-题目描述Leetcode219: 存在重复元素 II
-给定一个整数数组和一个整数 k，判断数组中是否存在两个不同的索引 i 和 j，
-使得 nums [i] = nums [j]，并且 i 和 
+题目描述请实现一个函数，将一个字符串中的每个空格替换成“%20”。
+例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
+解法一：判断空格，后移两位元素clas
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Leetcode/" class="post-category" target="_blank">
-                                    Leetcode
+                            <a href="/categories/剑指offer/" class="post-category" target="_blank">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Leetcode/" target="_blank">
-                        <span class="chip bg-color">Leetcode</span>
+                    <a href="/tags/剑指offer/" target="_blank">
+                        <span class="chip bg-color">剑指offer</span>
                     </a>
                     
                 </div>
@@ -1115,29 +1084,34 @@ lower_bound()：返回的是被查序列中第一个大于等于查找值的指�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/20/leetcode371/">
+                <a href="/2020/04/26/leetcode485/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Leetcode371">
+                        <img src="/medias/featureimages/32.jpg" class="responsive-img" alt="Leetcode485">
                         
-                        <span class="card-title">Leetcode371</span>
+                        <span class="card-title">Leetcode485</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Leetcode371：两整数之和
+                            Leetcode485：最大连续1的个数
 
-题目描述&#160; &#160; &#160; &#160;不使用运算符 + 和 - ​​​​​​​，计算两整数 ​​​​​​​a 、b ​​​​​​​之和。
-示例 1:
+题目描述示例 1:
 
-输入: a = 1, b 
+输入: [1,1,0,1,1,1]
+输出: 3
+解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.
+注意：
+
+输入的数组只包含 0 和1。
+输入数组的长度
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-20
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-26
                             </span>
                         <span class="publish-author">
                             
