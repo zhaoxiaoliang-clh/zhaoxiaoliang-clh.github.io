@@ -465,7 +465,7 @@ public:
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    153
+                    299
                 </div>
                 
 
@@ -513,6 +513,29 @@ public:
             low <span class="token operator">=</span> low<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> low<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法二：基于set的方法"><a href="#解法二：基于set的方法" class="headerlink" title="解法二：基于set的方法"></a>解法二：基于set的方法</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**********************************************************
+基于set的方法
+这里用到了STL中的set，set有一个特性就是不能插入相同元素，
+这样只需遍历原List一次就可以判断出有没有环，还有环的入口地址。
+s.insert(node).second这里在插入的同时也判断了插入是否成功，
+如果不成功表明set中已经有该元素了，该元素就是环的入口元素。
+**********************************************************/</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    ListNode<span class="token operator">*</span> <span class="token function">EntryNodeOfLoop</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> pHead<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        set<span class="token operator">&lt;</span>ListNode<span class="token operator">*</span><span class="token operator">></span> s<span class="token punctuation">;</span>
+        ListNode<span class="token operator">*</span> node <span class="token operator">=</span> pHead<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>node <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">.</span>second<span class="token punctuation">)</span>
+                node <span class="token operator">=</span> node<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            <span class="token keyword">else</span>
+                <span class="token keyword">return</span> node<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> node<span class="token punctuation">;</span>
+
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
@@ -1283,7 +1306,7 @@ n&lt;=39
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">26.2k</span>
+            <span class="white-color">26.3k</span>
             
 
             <br>
