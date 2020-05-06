@@ -4,17 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C++中vector、array和数组的比较, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="剑指offer056, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="C++中vector、array和数组的比较
+    <meta name="description" content="剑指offer056：链表中环的入口结点
 
-一、相同点
-
-1. 三者均可以使用下表运算符对元素进行操作，即vector和array都针对下标运算符[]进行了重载
-
-2. 三者在内存的方面都使用连续内存，即在vector和array的底层">
+题目描述题目描述
+给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+解法一：基于快慢指针的方法class Solution {
+public:
+    ListNode*">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>C++中vector、array和数组的比较 | Hexo</title>
+    <title>剑指offer056 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -310,13 +310,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/33.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/30.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        C++中vector、array和数组的比较
+                        剑指offer056
                     </div>
                 </div>
             </div>
@@ -427,8 +427,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/C/" target="_blank">
-                            <span class="chip bg-color">C++</span>
+                        <a href="/tags/剑指offer/" target="_blank">
+                            <span class="chip bg-color">剑指offer</span>
                         </a>
                         
                     </div>
@@ -439,8 +439,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/C/" class="post-category" target="_blank">
-                            C++
+                        <a href="/categories/剑指offer/" class="post-category" target="_blank">
+                            剑指offer
                         </a>
                         
                     </div>
@@ -451,7 +451,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-01-03
+                    2020-05-06
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -465,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    470
+                    153
                 </div>
                 
 
@@ -488,32 +488,54 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center><font color="purple" size="6">C++中vector、array和数组的比较</font></center>
+                <center><font color="purple" size="6">剑指offer056：链表中环的入口结点</font></center>
 
-<center><font color="purple" size="5">一、相同点</font></center>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><pre class="line-numbers language-cpp"><code class="language-cpp">题目描述
+给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="解法一：基于快慢指针的方法"><a href="#解法一：基于快慢指针的方法" class="headerlink" title="解法一：基于快慢指针的方法"></a>解法一：基于快慢指针的方法</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    ListNode<span class="token operator">*</span> <span class="token function">EntryNodeOfLoop</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> pHead<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        ListNode<span class="token operator">*</span> fast <span class="token operator">=</span> pHead<span class="token punctuation">,</span> <span class="token operator">*</span>low <span class="token operator">=</span> pHead<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>fast<span class="token operator">&amp;&amp;</span>fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            fast <span class="token operator">=</span> fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            low <span class="token operator">=</span> low<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>fast <span class="token operator">==</span> low<span class="token punctuation">)</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>fast <span class="token operator">||</span> <span class="token operator">!</span>fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        low <span class="token operator">=</span> pHead<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//low从链表的头出发</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>fast <span class="token operator">!=</span> low<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            fast <span class="token operator">=</span> fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            low <span class="token operator">=</span> low<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> low<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token number">1</span><span class="token punctuation">.</span> 三者均可以使用下表运算符对元素进行操作，即vector和array都针对下标运算符<span class="token punctuation">[</span><span class="token punctuation">]</span>进行了重载
 
-<span class="token number">2</span><span class="token punctuation">.</span> 三者在内存的方面都使用连续内存，即在vector和array的底层存储结构均使用数组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<center><font color="purple" size="5">二、不同点</font></center>
+<span class="token comment" spellcheck="true">//定义结点</span>
+<span class="token keyword">struct</span> ListNode <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> val<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> ListNode <span class="token operator">*</span>next<span class="token punctuation">;</span>
+    <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token operator">:</span>
+        <span class="token function">val</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token number">1</span><span class="token punctuation">.</span> vector属于变长容器，即可以根据数据的插入删除重新构建容器容量；但array和数组属于定长容量。
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
 
-<span class="token number">2</span><span class="token punctuation">.</span> vector和array提供了更好的数据访问机制，即可以使用front和back以及at访问方式，使得访问更加安全。而数组只能通过下标访问，在程序的设计过程中，更容易引发访问 错误。
 
-<span class="token number">3</span><span class="token punctuation">.</span> vector和array提供了更好的遍历机制，即有正向迭代器和反向迭代器两种
-
-<span class="token number">4</span><span class="token punctuation">.</span> vector和array提供了size和判空的获取机制，而数组只能通过遍历或者通过额外的变量记录数组的size
-
-<span class="token number">5</span><span class="token punctuation">.</span> vector和array提供了两个容器对象的内容交换，即swap的机制，而数组对于交换只能通过遍历的方式，逐个元素交换的方式使用
-
-<span class="token number">6</span><span class="token punctuation">.</span> array提供了初始化所有成员的方法fill
-
-<span class="token number">7</span><span class="token punctuation">.</span> vector提供了可以动态插入和删除元素的机制，而array和数组则无法做到，或者说array和数组需要完成该功能则需要自己实现完成
-
-<span class="token number">8</span><span class="token punctuation">.</span>由于vector的动态内存变化的机制，在插入和删除时，需要考虑迭代的是否失效的问题。
-
-<span class="token number">9</span><span class="token punctuation">.</span> vector和array在声明变量后，在生命周期完成后，会自动地释放其所占用的内存。对于数组，如果是采用<span class="token keyword">new</span><span class="token punctuation">[</span><span class="token punctuation">]</span>申请的内存空间，必须在使用<span class="token keyword">delete</span><span class="token punctuation">[</span><span class="token punctuation">]</span>完毕后手动释放其内存。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -672,9 +694,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《C++中vector、array和数组的比较》
+                    《剑指offer056》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/03/c-zhong-vector-array-he-shu-zu-de-bi-jiao/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/06/jian-zhi-offer056/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -715,7 +737,7 @@
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2020/01/03/c-zhong-vector-array-he-shu-zu-de-bi-jiao/',
+        id: '2020/05/06/jian-zhi-offer056/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -998,48 +1020,54 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/01/06/c-biao-zhun-ku-zhi-cctype/">
+                <a href="/2020/05/06/jian-zhi-offer056/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="C++标准库之cctype">
+                        <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="剑指offer056">
                         
-                        <span class="card-title">C++标准库之cctype</span>
+                        <span class="card-title">剑指offer056</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++标准库之cctype
+                            剑指offer056：链表中环的入口结点
 
-1. 什么是cctype？&#160; &#160; &#160; &#160;C++从C语言继承了一个与字符相关的、非常方便的函数软件包，它可以简化诸如确定字符是否为大写字母、数字、标点符号等工作，这些函数的
+题目描述题目描述
+给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+解法一：基于快慢指针的方法class Solution {
+public:
+    ListNode*
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category" target="_blank">
-                                    C++
+                            <a href="/categories/剑指offer/" class="post-category" target="_blank">
+                                    剑指offer
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/剑指offer/" target="_blank">
+                        <span class="chip bg-color">剑指offer</span>
                     </a>
                     
                 </div>
@@ -1053,33 +1081,36 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/01/02/cpp-zhi-vector-rong-qi-xiao-jie/">
+                <a href="/2020/05/05/jian-zhi-offer08/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="C++之vector容器小结">
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="剑指offer08">
                         
-                        <span class="card-title">C++之vector容器小结</span>
+                        <span class="card-title">剑指offer08</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++之vector容器小结
+                            剑指offer08：斐波那契数列
 
-1. 什么是vector？&#160; &#160; &#160; &#160;向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）。跟任意其它类型容器一样，它能够存
+题目描述大家都知道斐波那契数列，现在要求输入一个整数n，
+请你输出斐波那契数列的第n项（从0开始，第0项为0，第1项是1）。
+n&lt;=39
+解法一：基于for循环和双标记class Solution 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-02
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C/" class="post-category" target="_blank">
-                                    C++
+                            <a href="/categories/剑指offer/" class="post-category" target="_blank">
+                                    剑指offer
                                 </a>
                             
                             
@@ -1089,8 +1120,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/剑指offer/" target="_blank">
+                        <span class="chip bg-color">剑指offer</span>
                     </a>
                     
                 </div>
