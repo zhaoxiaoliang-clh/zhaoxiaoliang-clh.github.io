@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhaoxiaoliang-clh.github.io/"/>
-  <updated>2020-05-07T03:02:06.844Z</updated>
+  <updated>2020-05-07T08:23:30.988Z</updated>
   <id>https://zhaoxiaoliang-clh.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>剑指offer08</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2020/05/07/jian-zhi-offer08/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2020/05/07/jian-zhi-offer08/</id>
+    <published>2020-05-07T08:20:41.000Z</published>
+    <updated>2020-05-07T08:23:30.988Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;剑指offer08：跳台阶&lt;/font&gt;&lt;/center&gt;
+
+&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
+    
+    
+      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
+    
+  </entry>
   
   <entry>
     <title>剑指offer09</title>
@@ -73,11 +101,11 @@
   </entry>
   
   <entry>
-    <title>剑指offer08</title>
-    <link href="https://zhaoxiaoliang-clh.github.io/2020/05/05/jian-zhi-offer08/"/>
-    <id>https://zhaoxiaoliang-clh.github.io/2020/05/05/jian-zhi-offer08/</id>
+    <title>剑指offer07</title>
+    <link href="https://zhaoxiaoliang-clh.github.io/2020/05/05/jian-zhi-offer07/"/>
+    <id>https://zhaoxiaoliang-clh.github.io/2020/05/05/jian-zhi-offer07/</id>
     <published>2020-05-05T02:49:53.000Z</published>
-    <updated>2020-05-05T02:52:48.550Z</updated>
+    <updated>2020-05-07T08:21:22.840Z</updated>
     
     <summary type="html">
     
@@ -85,7 +113,7 @@
       
         
         
-          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;剑指offer08：斐波那契数列&lt;/font&gt;&lt;/center&gt;
+          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;剑指offer07：斐波那契数列&lt;/font&gt;&lt;/center&gt;
 
 &lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
         
@@ -545,34 +573,6 @@
     
     
       <category term="Leetcode" scheme="https://zhaoxiaoliang-clh.github.io/tags/Leetcode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剑指offer64</title>
-    <link href="https://zhaoxiaoliang-clh.github.io/2020/04/17/jian-zhi-offer64/"/>
-    <id>https://zhaoxiaoliang-clh.github.io/2020/04/17/jian-zhi-offer64/</id>
-    <published>2020-04-17T01:17:13.000Z</published>
-    <updated>2020-04-17T02:19:11.064Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;center&gt;&lt;font color=&quot;purple&quot; size=&quot;6&quot;&gt;剑指offer64：求1+2+…+n&lt;/font&gt;&lt;/center&gt;
-
-&lt;h4 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/categories/%E5%89%91%E6%8C%87offer/"/>
-    
-    
-      <category term="剑指offer" scheme="https://zhaoxiaoliang-clh.github.io/tags/%E5%89%91%E6%8C%87offer/"/>
     
   </entry>
   
