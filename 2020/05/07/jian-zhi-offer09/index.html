@@ -4,13 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="剑指offer04, TJU NLP DeepLearning 自然语言处理 深度学习">
+    <meta name="keywords" content="剑指offer09, TJU NLP DeepLearning 自然语言处理 深度学习">
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="剑指offer04：二维数组元素查找
+    <meta name="description" content="剑指offer09：变态跳台阶
 
-题目描述&amp;#160; &amp;#160; &amp;#160; &amp;#160;在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二">
+题目描述一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。
+求该青蛙跳上一个n级的台阶总共有多少种跳法。
+解法一：基于递归的方法class Solution {
+public:
+    in">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>剑指offer04 | Hexo</title>
+    <title>剑指offer09 | Hexo</title>
     <link rel="icon" type="image/jpeg" href="/changzhengyihao.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -306,13 +310,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/29.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        剑指offer04
+                        剑指offer09
                     </div>
                 </div>
             </div>
@@ -447,7 +451,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-04-11
+                    2020-05-07
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -461,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    566
+                    190
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -484,115 +488,49 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <center><font color="purple" size="6">剑指offer04：二维数组元素查找</font></center>
+                <center><font color="purple" size="6">剑指offer09：变态跳台阶</font></center>
 
-<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>&#160; &#160; &#160; &#160;在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">示例<span class="token operator">:</span>
-现有矩阵 matrix 如下：
-<span class="token punctuation">[</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span>   <span class="token number">4</span><span class="token punctuation">,</span>  <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span>   <span class="token number">5</span><span class="token punctuation">,</span>  <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span>   <span class="token number">6</span><span class="token punctuation">,</span>  <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">24</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">]</span>
-<span class="token punctuation">]</span>
-
-给定 target <span class="token operator">=</span> <span class="token number">5</span>，返回 <span class="token boolean">true</span>。
-给定 target <span class="token operator">=</span> <span class="token number">20</span>，返回 <span class="token boolean">false</span>。
-
-限制：
-<span class="token number">0</span> <span class="token operator">&lt;=</span> n <span class="token operator">&lt;=</span> <span class="token number">1000</span>
-<span class="token number">0</span> <span class="token operator">&lt;=</span> m <span class="token operator">&lt;=</span> <span class="token number">1000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="解法一：暴力法"><a href="#解法一：暴力法" class="headerlink" title="解法一：暴力法"></a>解法一：暴力法</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><pre class="line-numbers language-cpp"><code class="language-cpp">一只青蛙一次可以跳上<span class="token number">1</span>级台阶，也可以跳上<span class="token number">2</span>级……它也可以跳上n级。
+求该青蛙跳上一个n级的台阶总共有多少种跳法。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="解法一：基于递归的方法"><a href="#解法一：基于递归的方法" class="headerlink" title="解法一：基于递归的方法"></a>解法一：基于递归的方法</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">bool</span> <span class="token function">findNumberIn2DArray</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> matrix<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">(</span>matrix<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>  
-        <span class="token comment" spellcheck="true">//matrix.size()就是”二维数组”的行数</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>  
-            <span class="token comment" spellcheck="true">//matrix[0].size()就是”二维数组”的列数</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">)</span>
-                <span class="token punctuation">{</span>
-                    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The target is in the 2DArray!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-                    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> <span class="token function">jumpFloorII</span><span class="token punctuation">(</span><span class="token keyword">int</span> number<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The target is not in the 2DArray!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token function">jumpFloorII</span><span class="token punctuation">(</span>number <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="解法二：找规律"><a href="#解法二：找规律" class="headerlink" title="解法二：找规律"></a>解法二：找规律</h4><p>&#160; &#160; &#160; &#160;<font color="black" size="4">我们从左下角开始遍历，当该值小于target值时，向右搜索；大于target值时，向上搜索。如果找到target则返回True，否则返回 False。</font></p>
-<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/******************************************************************
-我们从左下角开始遍历，当该值小于 target 值时，向右搜索；
-大于 target 值时，向上搜索。如果找到 target 则返回 True，否则返回 False。
-******************************************************************/</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法二：基于规律的方法"><a href="#解法二：基于规律的方法" class="headerlink" title="解法二：基于规律的方法"></a>解法二：基于规律的方法</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution2</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">bool</span> <span class="token function">findNumberIn2DArray</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> matrix<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>matrix<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> m <span class="token operator">=</span> matrix<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> n <span class="token operator">=</span> matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> row <span class="token operator">=</span> m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> col <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>row<span class="token operator">>=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>col<span class="token operator">&lt;</span>n<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>row<span class="token punctuation">]</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span> <span class="token operator">&lt;</span> target<span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                col<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>row<span class="token punctuation">]</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span> <span class="token operator">></span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                row<span class="token operator">--</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">else</span>
-            <span class="token punctuation">{</span>
-                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The target is in the 2DArray!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> <span class="token function">jumpFloorII</span><span class="token punctuation">(</span><span class="token keyword">int</span> number<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//通过移位计算2的次方</span>
+        <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>number <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token punctuation">}</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"The target is not in the 2DArray!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> N <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> M <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
-    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">></span> <span class="token function">obj</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token punctuation">(</span>M<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//定义二维动态数组5行5列;</span>
-
-
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入二维数组: "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">int</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token keyword">int</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            cin <span class="token operator">>></span> obj<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-    <span class="token keyword">int</span> target<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入target: "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cin <span class="token operator">>></span> target<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//cout &lt;&lt; "The target is: " &lt;&lt; target &lt;&lt; endl;</span>
-    Solution2 answer<span class="token punctuation">;</span>
-    answer<span class="token punctuation">.</span><span class="token function">findNumberIn2DArray</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+    <span class="token keyword">int</span> nums<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入台阶的数量："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> nums<span class="token punctuation">;</span>
+    Solution2 a<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"总共有 "</span> <span class="token operator">&lt;&lt;</span> a<span class="token punctuation">.</span><span class="token function">jumpFloorII</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"种跳法"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
 
     <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -751,9 +689,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《剑指offer04》
+                    《剑指offer09》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/04/11/jian-zhi-offer04/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/07/jian-zhi-offer09/" property="cc:attributionName"
                rel="cc:attributionURL">
                 赵小亮
             </a> 采用
@@ -794,7 +732,7 @@
         repo: 'zhaoxiaoliang-clh.github.io',
         owner: 'zhaoxiaoliang-clh',
         admin: "zhaoxiaoliang-clh",
-        id: '2020/04/11/jian-zhi-offer04/',
+        id: '2020/05/07/jian-zhi-offer09/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1077,31 +1015,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/04/11/jian-zhi-offer03/">
+                <a href="/2020/05/07/jian-zhi-offer09/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="剑指offer03">
+                        <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="剑指offer09">
                         
-                        <span class="card-title">剑指offer03</span>
+                        <span class="card-title">剑指offer09</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            剑指offer03：查找数组中重复的数字
+                            剑指offer09：变态跳台阶
 
-题目描述&#160; &#160; &#160; &#160;在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道
+题目描述一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。
+求该青蛙跳上一个n级的台阶总共有多少种跳法。
+解法一：基于递归的方法class Solution {
+public:
+    in
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1114,6 +1057,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1132,34 +1076,37 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/18/jupyter-notebook-da-kai-mo-ren-wen-jian-jia-yi-wai-de-wen-jian/">
+                <a href="/2020/05/06/jian-zhi-offer056/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="Jupyter Notebook打开默认文件夹以外的文件">
+                        <img src="/medias/featureimages/31.jpg" class="responsive-img" alt="剑指offer056">
                         
-                        <span class="card-title">Jupyter Notebook打开默认文件夹以外的文件</span>
+                        <span class="card-title">剑指offer056</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Jupyter Notebook打开默认文件夹以外的文件
+                            剑指offer056：链表中环的入口结点
 
-1. Jupyter Notebook默认打开目录&#160; &#160; &#160; &#160; Jupyter启动之后默认打开的是C盘目录，如下图所示：
-&#160; &
+题目描述题目描述
+给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。
+解法一：基于快慢指针的方法class Solution {
+public:
+    ListNode*
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-03-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Jupyter-Notebook/" class="post-category" target="_blank">
-                                    Jupyter Notebook
+                            <a href="/categories/剑指offer/" class="post-category" target="_blank">
+                                    剑指offer
                                 </a>
                             
                             
@@ -1169,8 +1116,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Jupyter-Notebook/" target="_blank">
-                        <span class="chip bg-color">Jupyter Notebook</span>
+                    <a href="/tags/剑指offer/" target="_blank">
+                        <span class="chip bg-color">剑指offer</span>
                     </a>
                     
                 </div>
