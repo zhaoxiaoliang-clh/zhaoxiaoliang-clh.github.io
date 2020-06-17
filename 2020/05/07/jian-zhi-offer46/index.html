@@ -8,7 +8,11 @@
     <meta name="baidu-site-verification" content="cAt2P9DXF9">
     <meta name="google-site-verification" content>
     <meta name="360-site-verification" content>
-    <meta name="description" content="剑指offer46 | Hexo">
+    <meta name="description" content="剑指offer46：孩子们的游戏(约瑟夫环问题)
+
+题目描述每年六一儿童节,牛客都会准备一些小礼物去看望孤儿院的小朋友,今年亦是如此。
+HF作为牛客的资深元老,自然也准备了一些小游戏。其中,有个游戏是这样的:首先,让小朋友们围成一个大圈。
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -420,11 +424,24 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">无标签</span>
+                        
+                        <a href="/tags/剑指offer/" target="_blank">
+                            <span class="chip bg-color">剑指offer</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/剑指offer/" class="post-category" target="_blank">
+                            剑指offer
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -446,14 +463,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    495
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -469,7 +486,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <center><font color="purple" size="6">剑指offer46：孩子们的游戏(约瑟夫环问题)</font></center>
+
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><pre class="line-numbers language-cpp"><code class="language-cpp">每年六一儿童节<span class="token punctuation">,</span>牛客都会准备一些小礼物去看望孤儿院的小朋友<span class="token punctuation">,</span>今年亦是如此。
+HF作为牛客的资深元老<span class="token punctuation">,</span>自然也准备了一些小游戏。其中<span class="token punctuation">,</span>有个游戏是这样的<span class="token operator">:</span>首先<span class="token punctuation">,</span>让小朋友们围成一个大圈。
+然后<span class="token punctuation">,</span>他随机指定一个数m<span class="token punctuation">,</span>让编号为<span class="token number">0</span>的小朋友开始报数。每次喊到m<span class="token number">-1</span>的那个小朋友要出列唱首歌<span class="token punctuation">,</span>
+然后可以在礼品箱中任意的挑选礼物<span class="token punctuation">,</span>并且不再回到圈中<span class="token punctuation">,</span>从他的下一个小朋友开始<span class="token punctuation">,</span>
+继续<span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>m<span class="token number">-1</span>报数<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>这样下去<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>直到剩下最后一个小朋友<span class="token punctuation">,</span>可以不用表演<span class="token punctuation">,</span>并且拿到牛客名贵的“名侦探柯南”典藏版<span class="token punctuation">(</span>名额有限哦<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">^</span>_<span class="token operator">^</span><span class="token punctuation">)</span>。
+请你试着想下<span class="token punctuation">,</span>哪个小朋友会得到这份礼品呢？<span class="token punctuation">(</span>注：小朋友的编号是从<span class="token number">0</span>到n<span class="token number">-1</span><span class="token punctuation">)</span>
+
+如果没有小朋友，请返回<span class="token operator">-</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解法一：用数组模拟环的情况"><a href="#解法一：用数组模拟环的情况" class="headerlink" title="解法一：用数组模拟环的情况"></a>解法一：用数组模拟环的情况</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">LastRemaining_Solution</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> m<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n<span class="token operator">&lt;</span><span class="token number">1</span> <span class="token operator">||</span> m<span class="token operator">&lt;</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">array</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> step <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> count <span class="token operator">=</span> n<span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>count<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token comment" spellcheck="true">//跳出循环时将最后一个元素也设置为了-1</span>
+            i<span class="token operator">++</span><span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">//指向上一个被删除对象的下一个元素。</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">>=</span> n<span class="token punctuation">)</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//模拟环。</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//跳过被删除的对象。</span>
+            step<span class="token operator">++</span><span class="token punctuation">;</span>                     <span class="token comment" spellcheck="true">//记录已走过的。</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>step <span class="token operator">==</span> m<span class="token punctuation">)</span> <span class="token punctuation">{</span>               <span class="token comment" spellcheck="true">//找到待删除的对象。</span>
+                array<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+                step <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                count<span class="token operator">--</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> i<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//返回跳出循环时的i,即最后一个被设置为-1的元素</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="main函数"><a href="#main函数" class="headerlink" title="main函数"></a>main函数</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">,</span> m<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入小孩的人数n: "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> n<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入报号数m: "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    cin <span class="token operator">>></span> m<span class="token punctuation">;</span>
+    Solution answer<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"最后一个小孩是第"</span> <span class="token operator">&lt;&lt;</span> answer<span class="token punctuation">.</span><span class="token function">LastRemaining_Solution</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> m<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1214,7 +1280,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">29.8k</span>
+            <span class="white-color">30.4k</span>
             
 
             <br>
